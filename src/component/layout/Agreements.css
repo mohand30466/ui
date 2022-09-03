@@ -1,0 +1,37 @@
+.agreementscatogeries{
+    height: 45vh;
+}
+.proffisional{
+    width: 150px;
+    height: 150px;
+    background: var(--seconderyText);
+    color: var(--primery);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-shadow:10px 10px 10px var(--secondery);
+}
+.cookagreement{
+    width: 150px;
+    height: 150px;
+    background: var(--primary);
+    color: var(--seconderyText);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-shadow:10px 10px 10px var(--secondery);
+}
+.agreement{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 30px;
+    text-align: right;
+    min-height: 350vh;
+    color: var(--seconderyText);
+}
+.buttom{
+    background-color: var(--buttom);
+    height: 50px;
+    border:  1px solid red;
+    border-radius: 5px;
+    margin-top: 20px;
+    color: var(--seconderyText);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

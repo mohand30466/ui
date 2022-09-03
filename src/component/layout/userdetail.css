@@ -1,0 +1,78 @@
+
+    .userdetaincontainer{
+        width: 95vw;
+        min-height: 100vh;
+        background-color: var(--primary);
+        margin-left: 1.9vw;
+
+        
+    }
+    
+    .userdetailinformations{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 95vw;
+        min-height: 100vh;
+        /* background-color: var(--primary); */
+        margin-left: 1.9vw;
+
+    }
+    .avatarcontainer1{
+      margin-top: 4rem;
+      width: 100%;
+      height: 55vh;
+      display: flex;
+      justify-content: center;
+      color: var(--seconderyTex);
+      /* border: 2px solid red; */
+      
+    }
+    .useravatar{
+      width: 60vw;
+      height: 55vh;
+      border-radius: 3px;
+    }
+    /* .active{
+      width:30px;
+      height: 30px;
+      border-radius: 50%;
+      background: green;
+    } */
+    .userdetailinfo{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 60vw;
+        height: 30vh;
+        background-color: #f1faee; 
+      border-radius: 3px;
+      
+
+            }
+    .userInfoRow1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #1d3557;
+        font-size: 18px;
+        border-bottom: 3px solid var(--buttom);
+
+    }
+    .buttom1{
+        line-height: 1px;
+        width: 15vw;
+        height: 2.3rem;
+        border: 1px solid var(--buttom);
+        background-color: var(--buttom);
+        border-radius: 3px;
+        
+    }
+  
+    .buttom1 a{
+        text-decoration: none;
+        color: var(--seconderyText);
+        
+    }
+  

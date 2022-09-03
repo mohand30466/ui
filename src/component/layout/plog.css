@@ -1,0 +1,131 @@
+ .plogcontiner{
+    min-height: 100vh;
+    background-color: var(--background);
+ }
+ .create{
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: greenyellow;
+    font-size: 1.6rem;
+    background-color: var(--primary);
+    text-align: center;
+ }
+ .plogtitle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+    background-color: var(--background);
+ }
+ .plogtitle p{
+   
+    color: var(--seconderyText);
+ }
+
+ .latestplog{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+
+ }
+ .mainpost{
+    width: 100%;
+    height: 95vh;
+    background-color: var(--seconderyText);
+    box-shadow: 10px 5px 20px var(--primary);
+ }
+ .mainpost img{
+    float: left;
+    margin: 15px;
+ }
+
+
+ .posttitle{
+    margin-top: 19px;
+ }
+ .prograph{
+    margin: 15px; 
+ }
+ .postingo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-right: 15px;
+
+ }
+ .suppost{
+    width: 100%;
+    height: 95vh;
+    background-color: var(--secondery);
+    display: flex;
+    flex-direction: column;
+
+ }
+
+ .suppostcontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-right: 15px;
+    background-color: var(--background);
+    height: 100vh;
+    width: 100%;
+    
+ }
+ .posthotel{
+    width: 160px;
+    height: 170px;
+    float: left;
+ }
+ .Mysuppost{
+    align-items: center;
+   border: 1px  solid var(--secondery);
+   width: 90%;
+   box-shadow: 3px 3px 20px var(--secondery);
+
+
+ }
+ .Mysuppost h4{
+    border-bottom: 2px solid var(--buttom);
+ }
+.earlierpost{
+    
+     min-height: 100vh;
+    width: 96%;
+    margin-left: 15px;
+
+}
+.earlierpost img{
+    float: right;
+    height: 40vh;
+    width: 50%;
+    
+
+}
+.earlierpost p{
+  letter-spacing: 1px;
+  margin: 15px;
+
+}
+.earlierpost div h3{
+    color: green;
+    border-bottom: 2px solid var(--buttom);
+  
+  }
+  .epost{
+    margin-bottom: 20px;
+    box-shadow: 1px 10px 10px var(--primary);
+    
+  }

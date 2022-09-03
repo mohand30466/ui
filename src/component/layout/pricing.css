@@ -1,0 +1,117 @@
+.pricing{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: var(--seconderyText);
+    box-shadow: 5px 10px 10px var(--primaryText);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+.superEmployeeTitle{
+text-align: center;
+color: var(--secondery);
+}
+.employeecard{
+    position: relative;
+    width: 254px;
+    height: 150px;
+    background-color: var(--secondery);
+    border-radius: 5px;
+    margin-top: 10px;
+    box-shadow: 10px 10px lightblue
+}
+
+.employeecard .teamavatar{
+    height: 139px;
+    border-bottom: 1px solid var(--secondery);   
+}
+.employeecard .teamavatar .icons{
+    color: rgb(244, 220, 8); 
+    width: 100px;
+}
+.employeecard .teamavatar span{
+    margin-left: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 0.3px;
+
+}
+
+.resturant{
+    color: var(--seconderyText);
+
+
+}
+.partners{
+    margin-top: 35px;
+}
+
+ .partners a{
+    text-decoration: none;
+    color: var(--primaryText);
+}
+
+.pricing2{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    width: 190px;
+    height: 290px;
+    background-color: var(--seconderyText);
+    color: var(--primaryText);
+    border-radius: 1px;
+}
+.cheif{
+    
+    background-image: url(https://l450v.alamy.com/450v/jhtr73/chef-cook-hold-star-award-smiling-cartoon-restaurant-chief-in-white-jhtr73.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.btn{
+    position: absolute;
+    bottom: -15px;
+    background-color: var(--buttom);
+}
+.cook{
+    
+    background-image: url(data:image/jpeg;base64,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);
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+.prepar{
+    background-size: cover; background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZkSwPecvh4RiA42t_yMxDAEkKqJPspG_KNg&usqp=CAU);
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    color: var(--seconderyText);
+
+}
+.mensar{
+    background-image: url(https://img.freepik.com/free-vector/cheerful-sexy-girl-restaurant-waiter-with-tray-wine-glass-portrait-isolated-white-background-vector-illustration_1284-2391.jpg?w=2000);
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+.stewar{
+    background-image: url(https://www.sapkoenchev.com/SPK_StsContFiles/1415119-2-Kitchen-Steward_1.jpg);
+   background-position: 90%; 
+   background-size: 500px;
+   background-repeat: no-repeat;
+  
+    
+}
+.cleaner{
+    background-image: url(http://uniforium.com.tr/product/11M-1711%20MEN%20JACKET%20AND%20PANTS%20STEWARD.png);
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: 130px;
+}
+.employeelist{
+    padding-top: 40px;
+}

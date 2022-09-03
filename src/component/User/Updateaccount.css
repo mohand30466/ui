@@ -1,0 +1,42 @@
+.updatecontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 95vw;
+    height: 100vh;
+    margin-left: 1.9vw;
+    background-color:var(--primary);
+}
+.updatecontainer h5{
+   color:var(--seconderyText);
+}
+ 
+.formcontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    height: 90vh;
+    margin-left: 1.9vw;
+    background-color:var(--secondery);
+    border-radius: 5px;
+
+}
+.formcontainer form input{
+    width: 30vw;
+    height: 7vh;
+    border: 1px solid var(--secondery);
+    border-radius: 5px;
+
+}
+.formcontainer form button{
+    width: 30vw;
+    height: 7.5vh;
+    border: 1px solid var(--secondery);
+    border-radius: 5px;
+    background-color: var(--buttom);
+    color: var(--seconderyText);
+
+}
