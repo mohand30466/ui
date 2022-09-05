@@ -4,7 +4,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 import "./Agreements.css";
-// import "./Agreements.css";
+import { useState } from "react";
 
 function Copyright() {
   return (
@@ -30,6 +30,18 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Agreements = () => {
+  const [agreemantTitle, setAgreementTitle]= useState('Cheif')
+  const [price, setPrice]= useState('10')
+  const [mystyle, setMyStyle]= useState('')
+
+
+const hamdleclick =(title,price,style)=>{
+  setAgreementTitle(title)
+  setPrice(price)
+  setMyStyle(style)
+
+
+}
   return (
     <div className="content">
       <div className="topaboutus">
@@ -40,16 +52,16 @@ const Agreements = () => {
           <p> Please Read It Carfuly And Be Sure To Understand Everything</p>
         </div>
         <div className="partners agreementscatogeries">
-          <div className="partner proffisional">Cheif</div>
-          <div className="partner proffisional cookagreement">Cooker</div>
-          <div className="partner proffisional">Mensar</div>
-          <div className="partner proffisional">Stewar</div>
-          <div className="partner proffisional">Cleaner</div>
-          <div className="partner proffisional">Manager</div>
+          <div className='partner proffisional' style={{color:agreemantTitle=='Cheif'?mystyle:null}} onClick={e=>hamdleclick('Cheif',90,'red')}>Cheif</div>
+          <div className="partner proffisional" style={{color:agreemantTitle=='Cooker'?mystyle:null}} onClick={e=>hamdleclick('Cooker',90,'red')} >Cooker</div>
+          <div className="partner proffisional" style={{color:agreemantTitle=='Mensar'?mystyle:null}}onClick={e=>hamdleclick('Mensar',80,'red')}>Mensar</div>
+          <div className="partner proffisional" style={{color:agreemantTitle=='Stewar'?mystyle:null}}onClick={e=>hamdleclick('Stewar',70,'red')}>Stewar</div>
+          <div className="partner proffisional" style={{color:agreemantTitle=='Cleaner'?mystyle:null}}onClick={e=>hamdleclick('Cleaner',70,'red')}>Cleaner</div>
+          <div className="partner proffisional" style={{color:agreemantTitle=='Prepration'?mystyle:null}}onClick={e=>hamdleclick('Prepration',80,'red')}>Prepration</div>
         </div>
       </div>
       <div className="middlepage agreement"> 
-      <h3>Cooker Agreements</h3>
+      <h3>{agreemantTitle} Agreements {price}</h3>
       <div>
         הסכם למתן שירותים אשר נערך ונחתם ב _תל אביב—--2022 בין: יום טוב 15 תייא
         בעיים תודהש בע''מ: 515587013 Gili.buchershop@outlook.co.il (להלן

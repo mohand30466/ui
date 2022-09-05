@@ -7,9 +7,11 @@ import "./aboutus.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee,faStar } from '@fortawesome/free-solid-svg-icons';
 import './pricing.css';
+import { useNavigate } from "react-router-dom";
 
 
 function Copyright() {
+  
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
@@ -33,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Pricing = () => {
+  const navigate = useNavigate()
   return (
     <div className="content">
       <div className="topaboutus">
@@ -47,38 +50,38 @@ const Pricing = () => {
          <Link to="/Agreements"> 
           <div className="pricing pricing2 cheif">Cheif
             <br/><h4>90$</h4>
-            <button className="btn">See The Agreements</button>
+            <button className="btn" onClick={e=>navigate('/Agreements')}>See The Agreements</button>
             </div>
             </Link>
           
 
           <Link to="/Agreements"> 
             <div className="pricing pricing2 cook "> Cooker<br/><h4>90$</h4>
-            <button className="btn">See The Agreements</button>
+            <button className="btn" onClick={e=>navigate('/Agreements')}>See The Agreements</button>
             </div>
 
           </Link>
           <Link to="/Agreements"> 
           <div className="pricing pricing2 prepar">Preprations<br/><h4>80$</h4>
-          <button className="btn">See The Agreements</button>
+          <button className="btn" onClick={e=>navigate('/Agreements')}>See The Agreements</button>
           </div>
 
           </Link>
           <Link to="/Agreements"> 
           <div className="pricing pricing2 mensar">Mensar<br/><h4>80$</h4>
-          <button className="btn">See The Agreements</button>
+          <button className="btn" onClick={e=>navigate('/Agreements')}>See The Agreements</button>
           </div>
 
           </Link>
           <Link to="/Agreements"> 
           <div className="pricing pricing2 stewar">Stewar<br/><h4>70$</h4>
-          <button className="btn">See The Agreements</button>
+          <button className="btn" onClick={e=>navigate('/Agreements')}>See The Agreements</button>
           </div>
 
           </Link>
           <Link to="/Agreements"> 
           <div className="pricing pricing2 cleaner">Cleaner<br/><h4>70$</h4>
-          <button className="btn">See The Agreements</button>
+          <button className="btn" onClick={e=>navigate('/Agreements')}>See The Agreements</button>
           </div>
 
           </Link>
@@ -88,6 +91,7 @@ const Pricing = () => {
       
 
       </div>
+    
       
       <div className="buttompage employeelist">
         <div className="superEmployeeTitle">
