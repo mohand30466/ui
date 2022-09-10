@@ -10,16 +10,16 @@ export class Api {
   }
 
   static Getusers() {
-    
-    return fetch(`https://mohanproject.herokuapp.com/api/users/`, {
-    
-    }).then((res) => res.json());
+    return fetch(
+      `https://mohanproject.herokuapp.com/api/users/`,
+      {}
+    ).then((res) => res.json());
   }
   static Getuser(user) {
-    
-    return fetch(`https://mohanproject.herokuapp.com/api/users/${user}`, {
-    
-    }).then((res) => res.json());
+    return fetch(
+      `https://mohanproject.herokuapp.com/api/users/${user}`,
+      {}
+    ).then((res) => res.json());
   }
   static Login(body) {
     return fetch(`https://mohanproject.herokuapp.com/api/auth`, {
@@ -32,37 +32,35 @@ export class Api {
   }
 
   static UpdateUserProfile(data) {
-    
     return fetch(`https://mohanproject.herokuapp.com/api/profile/`, {
       method: "POST",
-      body:data
-    }).then((res) => res.json())
-    .catch(err =>console.log(err))
+      body: data,
+    })
+      .then((res) => res.json())
+      .catch((err) => console.log(err));
   }
   static GetProfile() {
-    
-    return fetch(`https://mohanproject.herokuapp.com/api/profile/`).then((res) => res.json())
-    .catch(err =>console.log(err))
+    return fetch(`https://mohanproject.herokuapp.com/api/profile/`)
+      .then((res) => res.json())
+      .catch((err) => console.log(err));
   }
   static GetMyProfile(data) {
-    
-    return fetch(`https://mohanproject.herokuapp.com/api/profile/${data}`).then((res) => res.json())
-    .catch(err =>console.log(err))
+    return fetch(`https://mohanproject.herokuapp.com/api/profile/${data}`)
+      .then((res) => res.json())
+      .catch((err) => console.log(err));
   }
 
-  static ChangePassword(body,id) {
+  static ChangePassword(body, id) {
     return fetch(`http://127.0.0.1:8000/users/${id}/ChangePass/`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(body),
-    }).then((res) => res.json())
+    }).then((res) => res.json());
   }
 
-
   static GetBosts() {
-    
     return fetch(`https://mohanproject.herokuapp.com/api/posts/`, {
       headers: {
         "Content-Type": "application/json",
@@ -71,24 +69,20 @@ export class Api {
   }
 
   static Bost(body) {
-    
     return fetch(`https://mohanproject.herokuapp.com/api/posts/`, {
-      method:"POST",
-      body: body
+      method: "POST",
+      body: body,
     }).then((res) => res.json());
   }
   static Contact_Us(body) {
-    
     return fetch(`https://mohanproject.herokuapp.com/api/contactus/`, {
-      method:"POST",
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(body),
-
     }).then((res) => res.json());
   }
-
 
   static Sendlikes(body) {
     return fetch(`http://127.0.0.1:8000/like/`, {
@@ -110,10 +104,10 @@ export class Api {
   }
 
   static GetMessages() {
-    
-    return fetch(`https://mohanproject.herokuapp.com/api/message/`, {
-    
-    }).then((res) => res.json());
+    return fetch(
+      `https://mohanproject.herokuapp.com/api/message/`,
+      {}
+    ).then((res) => res.json());
   }
 
   static SendMessage(body) {
@@ -124,7 +118,7 @@ export class Api {
       },
       body: JSON.stringify(body),
     }).then((res) => res.json());
-  } 
+  }
   static Gbussiness(body) {
     return fetch(`https://mohanproject.herokuapp.com/api/bussines/`, {
       method: "POST",
@@ -133,7 +127,15 @@ export class Api {
       },
       body: JSON.stringify(body),
     }).then((res) => res.json());
-  } 
+  }
+  static GetBussiness() {
+    return fetch(`https://mohanproject.herokuapp.com/api/bussines/`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((res) => res.json());
+  }
+
   static GManagers(body) {
     return fetch(`https://mohanproject.herokuapp.com/api/manager/`, {
       method: "POST",
@@ -142,7 +144,7 @@ export class Api {
       },
       body: JSON.stringify(body),
     }).then((res) => res.json());
-  } 
+  }
   static GStaff(body) {
     return fetch(`https://mohanproject.herokuapp.com/api/staff/`, {
       method: "POST",
@@ -151,15 +153,14 @@ export class Api {
       },
       body: JSON.stringify(body),
     }).then((res) => res.json());
-  } 
+  }
   static GetStaff() {
     return fetch(`https://mohanproject.herokuapp.com/api/staff/`, {
       headers: {
         "Content-Type": "application/json",
-      }
-    
+      },
     }).then((res) => res.json());
-  } 
+  }
   static GShift(body) {
     return fetch(`https://mohanproject.herokuapp.com/api/shift/`, {
       method: "POST",
@@ -168,8 +169,15 @@ export class Api {
       },
       body: JSON.stringify(body),
     }).then((res) => res.json());
-  } 
-  
+  }
+  static GetShift() {
+    return fetch(`https://mohanproject.herokuapp.com/api/shift/`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((res) => res.json());
+  }
+
   static StaffCard(body) {
     return fetch(`https://mohanproject.herokuapp.com/api/card/`, {
       method: "POST",
@@ -178,8 +186,23 @@ export class Api {
       },
       body: JSON.stringify(body),
     }).then((res) => res.json());
-  } 
-
+  }
+  static PlogPost(data) {
+    return fetch(`https://mohanproject.herokuapp.com/api/plogPost/`, {
+      method: "POST",
+      body: data,
+    })
+      .then((res) => res.json())
+      .catch((err) => console.log(err));
+  }
+  static GetPlogPost() {
+    return fetch(`https://mohanproject.herokuapp.com/api/plogPost/`)
+      .then((res) => res.json())
+      .catch((err) => console.log(err));
+  }
   
+
+
+
 
 }

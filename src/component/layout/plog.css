@@ -129,3 +129,13 @@
     box-shadow: 1px 10px 10px var(--primary);
     
   }
+
+  .create1{
+   width: 95vw;
+   height: 100vh;
+  }
+  .textArea{
+   width: 50vw;
+   height: 60vh;
+
+  }

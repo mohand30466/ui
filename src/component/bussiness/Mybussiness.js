@@ -13,19 +13,17 @@ import Container from "@material-ui/core/Container";
 import { useState, useEffect } from "react";
 import { Api } from "../service/Api";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSquarePlus,faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <Typography>
-        0123456789
-      </Typography>
-      <Typography>
-        www.directmanpower.com
-      </Typography>
+      <Typography>0123456789</Typography>
+      <Typography>www.directmanpower.com</Typography>
       <Link color="inherit" to="/">
         www.yashirmanpower.com
       </Link>{" "}
@@ -46,10 +44,9 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(1),
     backgroundColor: theme.palette.secondary.main,
   },
-  container:{
-    background:"#a8dadc",
-    maxWidth:"96.2%"
-
+  container: {
+    background: "#a8dadc",
+    maxWidth: "96.2%",
   },
   form: {
     width: "100%", // Fix IE 11 issue.
@@ -57,6 +54,14 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+  },
+  director:{
+    minHeight: "63.5vh",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent:"center",
+
   },
 }));
 
@@ -68,23 +73,57 @@ const Mybussiness = () => {
   const [phone, setPhone] = useState("");
   const [locations, setLocations] = useState("");
   const [serviceTime, setServiceTime] = useState("");
+  const [active, setActive] = useState(false);
   const classes = useStyles();
+  const db = JSON.parse(localStorage.getItem("data"));
+  const user = db.user_id;
+  const navigate = useNavigate()
 
+
+  console.log(user);
   const RegesterClick = async (e) => {
     e.preventDefault();
-    const sendMessage = await Api.Gbussiness({ name,bussinessId,email,catogery,phone,locations,serviceTime }).then((res) => {
-        localStorage.setItem("bussinesData",JSON.stringify(res))
+    const sendMessage = await Api.Gbussiness({
+      user,
+      name,
+      bussinessId,
+      email,
+      catogery,
+      phone,
+      locations,
+      serviceTime,
+    })
+      .then((res) => {
+        localStorage.setItem("bussinesData", JSON.stringify(res));
         if (res.id) {
           alert(`Congratulations!`);
-        }
-        else{
-            alert("somthing went weong try again")
+          navigate('/bussinessdetail')
+        } else {
+          alert("somthing went weong try again");
         }
       })
       .catch((err) => console.log(err));
   };
   return (
     <Container className={classes.container}>
+      <div>
+        <span> {active? <span>Update your Bussiness </span>: <span>Create Bussiness </span>} </span>
+        <FontAwesomeIcon
+          icon={faSquarePlus}
+          onClick={(e) => setActive(!active)}
+          className="createicon"
+        />
+        <div> 
+        <span>Already have BussinesS </span>
+        <FontAwesomeIcon
+          icon={faArrowRight}
+          onClick={(e) => navigate("/bussinessdetail")}
+          className="createicon"
+        />
+
+        </div>
+      </div>
+      { active? 
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
@@ -205,13 +244,25 @@ const Mybussiness = () => {
             >
               Greate Bussiness
             </Button>
-            
           </form>
         </div>
-        <Box mt={5}>
+      
+      </Container>:
+      <div  className={classes.director}>
+        <h3>Bussiness management</h3>
+        <ol>
+        <li>Create your bussiness</li>
+        <li>Greate your staff</li>
+        <li>create and update your shift</li>
+        <li>update the employee card</li>
+        <li>Data Analitics</li>
+        </ol>
+       
+      </div>
+      }
+       <Box mt={5}>
           <Copyright />
         </Box>
-      </Container>
     </Container>
   );
 };

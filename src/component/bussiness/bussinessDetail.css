@@ -1,0 +1,104 @@
+.bussinessinformations{
+    width: 96.2vw;
+    height: 35vh;
+    background: var(--buttom);
+    /* var(--primary); */
+    color: var(--seconderyText);
+    display: flex;
+    justify-content: space-between;
+
+}
+.avatar{
+    width: 80px;
+    height: 80px;
+    background-color: rebeccapurple;
+    margin: 1rem;
+}
+.bussinessAvatar{
+    font-size: 2rem;
+}
+.busInfo{
+    margin-left: 1rem;
+    letter-spacing: 2px;
+    line-height: 3px;
+}
+.busDetail{
+    margin: 1rem;
+
+    letter-spacing: 2px;
+    line-height: 5px;
+
+}
+h3{
+    margin: 1rem;
+
+}
+
+
+.staffAndShiftContainer{
+    width: 96.2vw;
+    min-height: 100vh;
+    background: var(--seconderyText);
+    display: flex;
+    justify-content: space-between;
+
+}
+.Staff{
+    width: 45vw;
+    min-height: 100%;
+    text-align: center;
+  
+}
+.staffllist{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.staffCard{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 7vh;
+    border-radius: 3px;
+    width: 80%;
+    margin: 5px;
+    background-color: var(--secondery);
+}
+
+.staffTitle{
+    margin: 30px;
+
+}
+.shiftContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50vw;
+
+}
+.shift{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 50vw;
+    justify-content: space-around;
+   
+
+}
+.shiftStaff{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 50vw;
+    justify-content: space-around;
+    height: 7vh;
+    margin: 10px;
+    border-radius: 3px;
+    background-color: var(--buttom);
+}
+.hours{
+    font-size: 2rem;
+    color: var(--primary);
+}

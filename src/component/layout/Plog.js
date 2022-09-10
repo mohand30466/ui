@@ -5,10 +5,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 import "./plog.css";
 import { Container } from "@material-ui/core";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
-
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { useState, useEffect } from "react";
+import { Api } from "../service/Api";
 
 function Copyright() {
   return (
@@ -34,15 +34,71 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Plog = () => {
+  const [open, setOpenWindow] = useState(false);
+  const [title, setTitle] = useState("");
+  const [image, setImage] = useState();
+  const [content, setContent] = useState("");
+  const [data, setData] = useState([]);
+  const db = JSON.parse(localStorage.getItem("data"));
+  const id = db.user_id;
+
+  const plogSubmit = async (e) => {
+    e.preventDefault();
+    const uploadData = new FormData();
+    uploadData.append("user", id);
+    uploadData.append("title", title);
+    uploadData.append("image", image, image.name);
+    uploadData.append("content", content);
+
+    const plogpost = await Api.PlogPost(uploadData)
+      .then((res) => alert("Wow! your post has been approved"))
+      .catch((err) => console.log(err.message));
+  };
+
+  useEffect(() => {
+    const getData = Api.GetPlogPost()
+      .then((res) => setData(res))
+      .catch((err) => console.log(err.message));
+  }, []);
+  console.log(data);
+
   return (
     <Container>
       <div className="plogcontiner">
         <div className="plogtitle">
           <div className="create">
-            <FontAwesomeIcon icon={faPlus}/>
-            </div>
+            <FontAwesomeIcon
+              icon={faPlus}
+              onClick={(e) => setOpenWindow(!open)}
+            />
+          </div>
           <h3>Plog Post</h3>
           <p>Discover the job movement and potential jobs</p>
+        </div>
+        <div>
+          {open ? (
+            <div className="create1">
+              <form onSubmit={plogSubmit}>
+                <input
+                  type="text"
+                  onChange={(e) => setTitle(e.target.value)}
+                  placeholder="job tittle"
+                />
+                <input
+                  type="file"
+                  onChange={(e) => setImage(e.target.files[0])}
+                />
+                <textarea
+                  className="textArea"
+                  type="text"
+                  onChange={(e) => setContent(e.target.value)}
+                  placeholder="job discription"
+                />
+
+                <input type="submit" title="Submit" />
+              </form>
+            </div>
+          ) : null}
         </div>
         <div className="latestplog">
           <div className="mainpost">
@@ -164,33 +220,19 @@ const Plog = () => {
           </div>
 
           <div className="epost">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQeTr5TANo2LM2NidoRUrRWSMGWR4KKMbPiQ&usqp=CAU" />
-            <h3>Clean city with bike</h3>
-            <p>
-              The hotel field is been one of the most clean and clreat field is
-              healthy for the employment becuse the view in good enouph to make
-              your day great and the people that come to the hotel in very nice
-              and good good time to enjoy it then they are happy The hotel field
-              is been one of the most clean and clreat field is healthy for the
-              employment becuse the view in good enouph to make your day great
-              and the people that come to the hotel in very nice and good good
-              time to enjoy it then they are happy The hotel field is been one
-              of the most clean and clreat field is healthy for the employment
-              becuse the view in good enouph to make your day great and the
-              people that come to the hotel in very nice and good good time to
-              enjoy it then they are happy is healthy for the employment becuse
-              the view in good enouph to make your day great and the people that
-              come to the hotel in very nice and good good time to enjoy it then
-              they are happy The hotel field is been one of the most clean and
-              clreat field is healthy for the employment becuse the view in good
-              enouph to make your day great and the people that come to the
-              hotel in very nice and good good time to enjoy it then they are
-              happy The hotel field is been one of the most clean and clreat
-              field is healthy for the employment becuse the view in good enouph
-              to make your day great and the people that come to the hotel in
-              very nice and good good time to enjoy it then they are happy{" "}
-              <Link to="#">Read More ...</Link>
-            </p>
+            {data &&
+              data.map((item) => {
+                return (
+                  <>
+                    <img src={item.image} />
+                    <h3>{item.title}</h3>
+                    <p>
+                      {item.content}
+                      <Link to="#">Read More ...</Link>
+                    </p>
+                  </>
+                );
+              })}
           </div>
         </div>
 

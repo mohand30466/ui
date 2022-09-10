@@ -23,6 +23,7 @@ import Mybussiness from "./component/bussiness/Mybussiness";
 import Shift from "./component/bussiness/Shifts";
 import Staffs from "./component/bussiness/Staff";
 import Cards from "./component/bussiness/Cards";
+import BussinessDetail from "./component/bussiness/bussinessDetail";
 function App() {
   let user = "user";
 
@@ -53,6 +54,7 @@ function App() {
             <Route path="/staff" element={<Staffs />} />
             <Route path="/shift" element={<Shift />} />
             <Route path="/Card" element={<Cards />} />
+            <Route path="/bussinessdetail" element={<BussinessDetail />} />
           </Routes>
         </AuthProvider>
       </BrowserRouter>

@@ -96,7 +96,7 @@ const Shift = () => {
             staffData.map((item) => {
               return (
                 <div className="stafflist" onClick={(e) => SetStaffId(item.id)}>
-                  {(item.bussines = bussiness ? item.name : null)}
+                  {(item.bussines = bussiness || item.bussines == null ? item.name : null)}
                 </div>
               );
             })}

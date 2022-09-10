@@ -71,17 +71,9 @@ export default function Home() {
           <div className="nestedlink">
             <Link to="/shift">Shift</Link>
           </div>
-          <div className="nestedlink">
-            <Link to="/card ">Cards</Link>
-          </div>
-          <div className="nestedlink">settings</div>
-          <div className="nestedlink">profile</div>
-          <div className="nestedlink">profile</div>
-          <div className="nestedlink">profile</div>
-          <div className="nestedlink">profile</div>
-          <div className="nestedlink">profile</div>
-          <div className="nestedlink">profile</div>
-          <div className="nestedlink">profile</div>
+         
+          
+          <div className="nestedlink">Settings</div>
           <div className="nestedlink">sign out</div>
         </div>
       </div>
