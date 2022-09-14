@@ -3,8 +3,6 @@ import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
@@ -13,7 +11,9 @@ import Container from "@material-ui/core/Container";
 import { useState, useEffect } from "react";
 import { Api } from "../service/Api";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import "./Card.css";
+import { SecurityUpdate } from "@mui/icons-material";
 
 function Copyright() {
   return (
@@ -56,18 +56,27 @@ const useStyles = makeStyles((theme) => ({
 
 const Cards = () => {
   const Bdata = JSON.parse(localStorage.getItem("bussinesData"));
-  const bussiness = Bdata.id;
-  const [staff, SetStaffId] = useState("");
-  const [shifts, setShifts] = useState("");
   const [day, setDay] = useState("");
   const [startAt, setStartAt] = useState();
   const [finishAt, setFinishAt] = useState();
   const [staffData, setStaffData] = useState("");
+  const [staffCard, setStaffCard] = useState([]);
+  const [update, setUpdate] = useState(false);
+
   const classes = useStyles();
+  const { state } = useLocation();
+  const staff = state.staff;
+  const shifts = state.shifts;
+
 
   useEffect(() => {
-    const staffData = Api.GetStaff().then((res) => setStaffData(res));
-  }, []);
+    const staffData = Api.GetSingleStaff(state.id).then((res) =>
+      setStaffData(res)
+    );
+    const staffCard = Api.GetStaffCard().then((res) =>
+      setStaffCard(res)
+    );
+  }, [update]);
 
   const CardClick = async (e) => {
     e.preventDefault();
@@ -80,16 +89,15 @@ const Cards = () => {
       finishAt,
     })
       .then((res) => {
-        console.log(res);
         if (res.id) {
-          alert(`Thank you! We will get back to you ass soon as posiple`);
+          setUpdate(!update)
+          alert(`Thank you! you update your card`);
         }
       })
       .catch((err) => console.log(err));
   };
   console.log(staffData);
-  console.log(staff);
-  console.log(shifts);
+
   return (
     <Container className={classes.container}>
       <Container component="main" maxWidth="xs">
@@ -102,49 +110,15 @@ const Cards = () => {
             Choose Staff
           </Typography>
 
-          {staffData &&
-            staffData.map((item) => {
-              return (
-                <div className="stafflist" onClick={(e) => SetStaffId(item.id)}>
-                  {(item.bussines = bussiness ? item.name : null)}
-                </div>
-              );
-            })}
+          {staffData && (
+            <div >
+              <p className="stafflist"> {staffData.name}</p>
+              <p className="stafflist"> {staffData.staffId}</p>
+            </div>
+          )}
 
           <form className={classes.form} noValidate onSubmit={CardClick}>
             <Grid container spacing={2}>
-              <div className="checkboxcontainer">
-                <Grid item xs={3}>
-                  Morning
-                  <TextField
-                    autoComplete="Name"
-                    name="Name"
-                    variant="outlined"
-                    required
-                    fullWidth
-                    id="Name"
-                    type="checkbox"
-                    label=""
-                    onClick={(e) => setShifts("MOR")}
-                    autoFocus
-                  />
-                </Grid>
-                <Grid item xs={3}>
-                  Evening
-                  <TextField
-                    autoComplete="Name"
-                    name="Name"
-                    variant="outlined"
-                    required
-                    fullWidth
-                    id="Name"
-                    type="checkbox"
-                    label=""
-                    onClick={(e) => setShifts("EVE")}
-                    autoFocus
-                  />
-                </Grid>
-              </div>
               <Grid item xs={12}>
                 <input
                   className="inputt"
@@ -157,7 +131,7 @@ const Cards = () => {
                 <input
                   className="inputt"
                   type="time"
-                  onClick={(e) => setStartAt(e.target.value)}
+                  onChange={(e) => setStartAt(e.target.value)}
                   autoFocus
                 />
               </Grid>
@@ -165,9 +139,8 @@ const Cards = () => {
                 <input
                   className="inputt"
                   type="time"
-                  onClick={(e) => setFinishAt(e.target.value)}
+                  onChange={(e) => setFinishAt(e.target.value)}
                   autoFocus
-
                 />
               </Grid>
             </Grid>
@@ -177,6 +150,25 @@ const Cards = () => {
               Add hours report
             </Button>
           </form>
+        </div>
+        <div>
+          <h1>Card Detail</h1>
+          <div>
+            {staffCard&& staffCard.map(item=>{
+              if (item.staff ===staff) {
+                return(
+                  <div className="visicalCard">
+                    <p>{item.day}</p>
+                    <span>{item.startAt}</span>
+                    <span>{item.finishAt}</span>
+                  </div>
+                )
+                
+              }
+            })
+
+            }
+          </div>
         </div>
         <Box mt={5}>
           <Copyright />

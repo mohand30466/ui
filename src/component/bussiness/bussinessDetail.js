@@ -71,10 +71,7 @@ export default function BussinessDetail() {
   const [shiftData, setShiftData] = useState([]);
   const db = JSON.parse(localStorage.getItem("data"));
   const id = db.user_id;
-  console.log(db);
-  console.log(data);
-  console.log(myBussnessId);
-  console.log(shiftData);
+  
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -180,7 +177,7 @@ export default function BussinessDetail() {
                           <FontAwesomeIcon
                             className="hours"
                             icon={faClockFour}
-                            onClick={(e) => navigate("/card")}
+                            onClick={(e) => navigate("/card",{ state: item })}
                           />{" "}
                           Update hours card
                         </div>

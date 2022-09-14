@@ -3,3 +3,14 @@
     height: 7vh;
     
 }
+
+.visicalCard{
+
+    display: flex;
+    flex-direction: row;
+    width: 50vw;
+    height: 5vh;
+    justify-content: space-between;
+    border: 1px solid var(--buttom);
+    margin:2px;
+}

@@ -161,6 +161,14 @@ export class Api {
       },
     }).then((res) => res.json());
   }
+  static GetSingleStaff(id) {
+    return fetch(`https://mohanproject.herokuapp.com/api/staff/${id}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((res) => res.json());
+  }
+
   static GShift(body) {
     return fetch(`https://mohanproject.herokuapp.com/api/shift/`, {
       method: "POST",
@@ -185,6 +193,13 @@ export class Api {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(body),
+    }).then((res) => res.json());
+  }
+  static GetStaffCard() {
+    return fetch(`https://mohanproject.herokuapp.com/api/card/`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
     }).then((res) => res.json());
   }
   static PlogPost(data) {
