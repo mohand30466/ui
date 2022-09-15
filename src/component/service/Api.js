@@ -85,7 +85,7 @@ export class Api {
   }
 
   static Sendlikes(body) {
-    return fetch(`http://127.0.0.1:8000/like/`, {
+    return fetch(`https://mohanproject.herokuapp.com/api/like/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -93,6 +93,18 @@ export class Api {
       body: JSON.stringify(body),
     }).then((res) => res.json());
   }
+  
+  static SendAplications(body) {
+    return fetch(`https://mohanproject.herokuapp.com/api/poke/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    }).then((res) => res.json());
+  }
+
+ 
   static Messages(body) {
     return fetch(`https://mohanproject.herokuapp.com/api/message/`, {
       method: "POST",

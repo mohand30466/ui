@@ -12,16 +12,21 @@ import {
   // faThumbsDown,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   const [data, setData] = useState([]);
-  const [open, setOpen] = useState(false);
   const [title, setTitle] = useState("");
+  const [open, setOpen] = useState(false);
+  const [active, setActive] = useState(false);
   const [discription, setDiscription] = useState("");
   const [location, setLocation] = useState("");
   const [image, setImage] = useState();
   const [time, setTime] = useState();
-  const [like, setlike] = useState(2);
+  const like = true;
+  const poke = true;
+  const navigate = useNavigate();
+
   const db = JSON.parse(localStorage.getItem("data"));
   const id = db.user_id;
   console.log(db);
@@ -50,16 +55,22 @@ export default function Home() {
     const bostData = Api.GetBosts()
       .then((res) => setData(res))
       .catch((err) => console.log(err));
-  }, [open]);
+  }, [open, active]);
 
   const sendlikeclicked = (post) => {
     const sendlike = Api.Sendlikes({ user: id, post, like })
-      .then((res) => console.log(res))
+      .then((res) => setActive(!active))
+      .catch((err) => console.log(err));
+  };
+  const sendApplications = (post) => {
+    const sendlike = Api.SendAplications({ user: id, post, poke })
+      .then((res) => setActive(!active))
       .catch((err) => console.log(err));
   };
 
   return (
     <div className="homeContainer">
+      {!open?
       <div className="userpro">
         <div className="usersettings">
           <div className="nestedlink">
@@ -71,12 +82,12 @@ export default function Home() {
           <div className="nestedlink">
             <Link to="/shift">Shift</Link>
           </div>
-         
-          
+
           <div className="nestedlink">Settings</div>
           <div className="nestedlink">sign out</div>
         </div>
-      </div>
+      </div>:null
+      }
 
       <div className="postcontainer">
         <div>
@@ -129,20 +140,29 @@ export default function Home() {
             data.map((item) => {
               return (
                 <>
-                  <div className="post" key={item.id}>
-                    <h1 style={{ textAlign: "center" }}>{item.post}</h1>
-                    <p>{item.title}</p>
-                    <p>{item.dis}</p>
-                    <img className="stylee" src={item.image} alt="" />
+                  <div className="post">
+                    <div
+                      key={item.id}
+                      onClick={(e) => navigate("/postdetail", { state: item })}
+                    >
+                      <h1 style={{ textAlign: "center" }}>{item.post}</h1>
+                      <p>{item.title}</p>
+                      <p>{item.dis}</p>
+                      <img className="stylee" src={item.image} alt="" />
+                    </div>
                     <div className="rate">
-                      <div>
+                      <div className="likeClick">
                         <span onClick={(e) => sendlikeclicked(item.id)}>
-                          {item.numoflikes}
+                          <span>{item.my_like.length}</span>
                           <Likes db={faThumbsUp} className="fontAwsome" />
                         </span>
                       </div>
                       <div>
-                        <span>
+                        <span
+                          className="likeClick"
+                          onClick={(e) => sendApplications(item.id)}
+                        >
+                          <span>{item.my_poke.length}</span>
                           <Likes db={faHeart} className="fontAwsome" />
                         </span>
                       </div>
@@ -153,9 +173,11 @@ export default function Home() {
             })}
         </div>
       </div>
-      <div className="users">
-        <Users />
-      </div>
+      {!open ? (
+        <div className="users">
+          <Users />
+        </div>
+      ) : null}
     </div>
   );
 }
