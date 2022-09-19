@@ -37,10 +37,12 @@ export default function componentName() {
   const [message, setMessage] = useState("");
   const [data, setData] = useState([]);
   const [msgData, setMsgData] = useState([]);
-  const reciver = state.userinfo.id
-  console.log("reciver",reciver);
+
+const reciver = state.user? state.user:state.userinfo
   
-console.log(reciver);
+    
+console.log("reciver:  ",state.user);
+  
 
   const SendMsgclick = (e) => {
     e.preventDefault()

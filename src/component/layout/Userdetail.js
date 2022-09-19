@@ -23,7 +23,7 @@ const Userdetail = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const user = Api.Getuser(obj.user).then((res) => setUserinfo(res));
+    const user = Api.Getuser(obj.user).then((res) => setUserinfo(res.id));
   }, []);
 
   return (

@@ -1,0 +1,59 @@
+.containerDetail{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--secondery);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.arrowBack{
+    margin: 10px;
+    height: 10vh;
+
+}
+.content{
+    width: 97vw;
+    height: 80vh;
+    background-color: var(--secondery);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+.mypostAvatar{
+    width: 40vw;
+    height: 60vh;
+    background: var(--seconderyText);
+    border-radius: 5px;
+}
+.mypostAvatar img{
+    width: 40vw;
+    height: 60vh;
+    opacity: 0.5;
+}
+.postDetailInfo{
+    width: 40vw;
+    height: 60vh;
+
+}
+.discriptions{
+    color: var(--seconderyText);
+}
+.title{
+    font-size: 2rem;
+}
+.titles{
+    font-size: 1.5rem;
+    color: var(--seconderyText);
+    line-height: 2rem;
+}
+button{
+    width: 20vw;
+    height: 6vh;
+    border: 1px var(--buttom) solid;
+    border-radius: 5px;
+    background-color: var(--buttom);
+}
