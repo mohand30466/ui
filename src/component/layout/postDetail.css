@@ -1,4 +1,4 @@
-.containerDetail{
+.containerDetails{
     width: 100vw;
     height: 100vh;
     background-color: var(--secondery);
@@ -14,7 +14,7 @@
     height: 10vh;
 
 }
-.content{
+.contents{
     width: 97vw;
     height: 80vh;
     background-color: var(--secondery);

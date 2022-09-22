@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Api } from "../service/Api";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router";
 import "./Useraccount.css";
 
 function UserAcount(props) {
@@ -13,6 +13,7 @@ function UserAcount(props) {
   const [userData, setUserData] = useState([]);
   const [proData, setProData] = useState([]);
   const [newproData, setNewProData] = useState([]);
+  const navigate = useNavigate()
   
   const [msg, setMsg] = useState("");
 
@@ -76,8 +77,8 @@ function UserAcount(props) {
             <p>{ "A little bit a bout me i am" }</p>
           </div>
           <div>
-            <button className="btn1">
-              <Link to="/updateaccount">Updata account</Link>
+            <button className="btn1" onClick={e=>navigate("/updateaccount",{state:item})}>
+              Updata account
             </button>
           </div>
         </div>

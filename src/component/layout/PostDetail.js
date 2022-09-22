@@ -14,11 +14,11 @@ const PostDetail = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="containerDetail">
+    <div className="containerDetails">
       <div className="arrowBack" onClick={(e) => navigate("/home")}>
         <FontAwesomeIcon icon={faArrowLeft} />
       </div>
-      <div className="content">
+      <div className="contents">
         {state && (
           <>
             <div className="postDetailInfo">

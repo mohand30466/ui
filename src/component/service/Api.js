@@ -31,12 +31,11 @@ export class Api {
     }).then((res) => res.json());
   }
 
-  static UpdateUserProfile(data) {
-    return fetch(`https://mohanproject.herokuapp.com/api/profile/`, {
-      method: "POST",
+  static UpdateUserProfile(id,data) {
+    return fetch(`https://mohanproject.herokuapp.com/api/profile/${id}/`, {
+      method: "PUT",
       body: data,
-    })
-      .then((res) => res.json())
+    }).then((res) => res.json())
       .catch((err) => console.log(err));
   }
   static GetProfile() {

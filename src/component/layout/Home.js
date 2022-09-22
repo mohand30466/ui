@@ -29,11 +29,10 @@ export default function Home() {
 
   const db = JSON.parse(localStorage.getItem("data"));
   const id = db.user_id;
-  console.log(db);
 
   const openPostWindow = () => setOpen(!open);
 
-  const postSubmit = (e) => {
+  const postSubmit =  async (e) => {
     e.preventDefault();
     const uploadidata = new FormData();
     uploadidata.append("user", id);
@@ -43,7 +42,7 @@ export default function Home() {
     uploadidata.append("image", image, image.name);
     uploadidata.append("time", time);
 
-    const posts = Api.Bost(uploadidata)
+    const posts = await Api.Bost(uploadidata)
       .then((res) => {
         console.log(res);
         if (res.id) setOpen(!open);
@@ -150,7 +149,7 @@ export default function Home() {
                       <p>{item.dis}</p>
                       <img className="stylee" src={item.image} alt="" />
                     </div>
-                    <div className="rate">
+                    <div className="rate" key={item.id}>
                       <div className="likeClick">
                         <span onClick={(e) => sendlikeclicked(item.id)}>
                           <span>{item.my_like.length}</span>
@@ -160,7 +159,7 @@ export default function Home() {
                       <div>
                         <span
                           className="likeClick"
-                          onClick={(e) => sendApplications(item.id)}
+                          onClick={(e) => sendApplications(item.id+1)}
                         >
                           <span>{item.my_poke.length}</span>
                           <Likes db={faHeart} className="fontAwsome" />
