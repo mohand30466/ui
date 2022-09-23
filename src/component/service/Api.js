@@ -8,6 +8,15 @@ export class Api {
       body: JSON.stringify(body),
     }).then((res) => res.json());
   }
+  static ChangePass(user,body) {
+    return fetch(`https://mohanproject.herokuapp.com/api/users/${user}/ChangePass/`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    }).then((res) => res.json());
+  }
 
   static Getusers() {
     return fetch(
