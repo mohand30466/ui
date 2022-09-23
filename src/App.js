@@ -25,6 +25,7 @@ import Staffs from "./component/bussiness/Staff";
 import Cards from "./component/bussiness/Cards";
 import BussinessDetail from "./component/bussiness/bussinessDetail";
 import PostDetail from "./component/layout/PostDetail";
+import UpdateBussiness from "./component/bussiness/UpdateBussines";
 function App() {
   let user = "user";
 
@@ -57,6 +58,7 @@ function App() {
             <Route path="/Card" element={<Cards />} />
             <Route path="/bussinessdetail" element={<BussinessDetail />} />
             <Route path="/postdetail" element={<PostDetail />} />
+            <Route path="/updatebussiness" element={<UpdateBussiness />} />
           </Routes>
         </AuthProvider>
       </BrowserRouter>

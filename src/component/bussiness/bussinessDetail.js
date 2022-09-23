@@ -11,7 +11,6 @@ import {
   faSquarePlus,
   faPenToSquare,
   faPlusSquare,
-  faClock,
   faClockFour,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
@@ -110,7 +109,7 @@ export default function BussinessDetail() {
                         Update your bussiness{" "}
                         <FontAwesomeIcon
                           icon={faPenToSquare}
-                          onClick={(e) => console.log(e)}
+                          onClick={(e) => navigate("/updatebussiness", {state:item})}
                           className="createicon"
                         />
                       </h3>

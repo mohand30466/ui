@@ -139,6 +139,15 @@ export class Api {
       body: JSON.stringify(body),
     }).then((res) => res.json());
   }
+  static UpdateBussiness(id,data) {
+    return fetch(`https://mohanproject.herokuapp.com/api/bussines/${id}/`, {
+      method: "PUT",
+      body: data,
+    }).then((res) => res.json())
+      .catch((err) => console.log(err));
+  }
+
+
   static GetBussiness() {
     return fetch(`https://mohanproject.herokuapp.com/api/bussines/`, {
       headers: {
