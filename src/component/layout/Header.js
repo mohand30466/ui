@@ -96,7 +96,7 @@ export const Header = () => {
  
 
   return (
-    <Container> 
+    <> 
     <div className="header_container">
       <div className="header">
         <div className="logo" onClick={(e) => navigate("/")}></div>
@@ -171,7 +171,7 @@ export const Header = () => {
         )}
       </div>
     </div>
-    </Container>
+    </>
   );
 };
 

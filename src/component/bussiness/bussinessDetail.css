@@ -1,5 +1,4 @@
 .bussinessinformations{
-    width: 96.2vw;
     height: 35vh;
     background: var(--buttom);
     /* var(--primary); */
@@ -36,9 +35,9 @@ h3{
 
 
 .staffAndShiftContainer{
-    width: 96.2vw;
+    width: 100vw;
     min-height: 100vh;
-    background: var(--seconderyText);
+    background-color: var(--primary);
     display: flex;
     justify-content: space-between;
 

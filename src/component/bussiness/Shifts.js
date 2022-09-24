@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     background: "#a8dadc",
-    maxWidth: "96.2%",
+    maxWidth: "100vw",
   },
   form: {
     width: "100%", // Fix IE 11 issue.

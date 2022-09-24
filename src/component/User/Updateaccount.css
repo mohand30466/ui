@@ -3,9 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 95vw;
     height: 100vh;
-    margin-left: 1.9vw;
     background-color:var(--primary);
 }
 .updatecontainer h5{

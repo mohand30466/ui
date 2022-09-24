@@ -1,3 +1,4 @@
-container{
+content{
     background-color: var(--background);
+    width: 100vw;
 }

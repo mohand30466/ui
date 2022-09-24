@@ -42,7 +42,8 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     background: "#a8dadc",
-    maxWidth: "96.2%",
+    maxWidth: "100%",
+    height:"100vh",
   },
   form: {
     width: "100%", // Fix IE 11 issue.
@@ -90,7 +91,7 @@ const Staff = () => {
   }, []);
 
   return (
-    <Container className={classes.container}>
+    <div className={classes.container}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
@@ -154,7 +155,7 @@ const Staff = () => {
           <Copyright />
         </Box>
       </Container>
-    </Container>
+    </div>
   );
 };
 

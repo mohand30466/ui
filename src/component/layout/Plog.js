@@ -63,7 +63,7 @@ const Plog = () => {
   console.log(data);
 
   return (
-    <Container>
+    <>
       <div className="plogcontiner">
         <div className="plogtitle">
           <div className="create">
@@ -240,7 +240,7 @@ const Plog = () => {
           <Copyright />
         </Box>
       </div>
-    </Container>
+    </>
   );
 };
 

@@ -79,7 +79,7 @@ const ContactUs = () => {
   };
   return (
     <>
-      <Container className={classes.container} component="main" maxWidth="xs">
+      <div className="content" component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
           <Avatar className={classes.avatar}>
@@ -90,7 +90,7 @@ const ContactUs = () => {
           </Typography>
           <form className={classes.form} noValidate onSubmit={RegesterClick}>
             <Grid container spacing={2}>
-              <Grid item xs={12}>
+              <Grid item xs={6}>
                 <TextField
                   autoComplete="title"
                   name="title"
@@ -104,7 +104,7 @@ const ContactUs = () => {
                   autoFocus
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid item xs={6}>
                 <TextField
                   variant="outlined"
                   required
@@ -149,7 +149,7 @@ const ContactUs = () => {
         <Box mt={5}>
           <Copyright />
         </Box>
-      </Container>
+      </div>
     </>
   );
 };

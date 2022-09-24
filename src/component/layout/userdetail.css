@@ -1,9 +1,7 @@
 
     .userdetaincontainer{
-        width: 95vw;
         min-height: 100vh;
         background-color: var(--primary);
-        margin-left: 1.9vw;
 
         
     }

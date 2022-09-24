@@ -16,6 +16,7 @@ import {
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./bussinessDetail.css";
+import { logDOM } from "@testing-library/react";
 
 function Copyright() {
   return (
@@ -82,13 +83,14 @@ export default function BussinessDetail() {
     const getshiftData = Api.GetShift().then((res) => setShiftData(res));
   }, []);
   return (
-    <Container>
+    <>
       {/* first container for bussiness detail */}
       <div>
         <div className="bussinessinformations">
           {data &&
             data.map((item) => {
               if (item.user == id && item.bussinessId == 505151) {
+                console.log(item);
                 return (
                   <>
                     <div>
@@ -191,6 +193,6 @@ export default function BussinessDetail() {
       <Box mt={5}>
         <Copyright />
       </Box>
-    </Container>
+    </>
   );
 }

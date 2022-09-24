@@ -43,7 +43,8 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     background: "#a8dadc",
-    maxWidth: "96.2%",
+    maxWidth: "100vw",
+    minHeight: "100vh",
   },
   form: {
     width: "100%", // Fix IE 11 issue.
@@ -68,14 +69,11 @@ const Cards = () => {
   const staff = state.staff;
   const shifts = state.shifts;
 
-
   useEffect(() => {
     const staffData = Api.GetSingleStaff(state.id).then((res) =>
       setStaffData(res)
     );
-    const staffCard = Api.GetStaffCard().then((res) =>
-      setStaffCard(res)
-    );
+    const staffCard = Api.GetStaffCard().then((res) => setStaffCard(res));
   }, [update]);
 
   const CardClick = async (e) => {
@@ -90,7 +88,7 @@ const Cards = () => {
     })
       .then((res) => {
         if (res.id) {
-          setUpdate(!update)
+          setUpdate(!update);
           alert(`Thank you! you update your card`);
         }
       })
@@ -111,7 +109,7 @@ const Cards = () => {
           </Typography>
 
           {staffData && (
-            <div >
+            <div>
               <p className="stafflist"> {staffData.name}</p>
               <p className="stafflist"> {staffData.staffId}</p>
             </div>
@@ -151,29 +149,29 @@ const Cards = () => {
             </Button>
           </form>
         </div>
+
+        
+      </Container>
+      <div className="cardDetail">
+        <h1>Card Detail</h1>
         <div>
-          <h1>Card Detail</h1>
-          <div>
-            {staffCard&& staffCard.map(item=>{
-              if (item.staff ===staff) {
-                return(
+          {staffCard &&
+            staffCard.map((item) => {
+              if (item.staff === staff) {
+                return (
                   <div className="visicalCard">
-                    <p>{item.day}</p>
+                    <span>{item.day}</span>
                     <span>{item.startAt}</span>
                     <span>{item.finishAt}</span>
                   </div>
-                )
-                
+                );
               }
-            })
-
-            }
-          </div>
+            })}
         </div>
-        <Box mt={5}>
+      </div>
+      <Box mt={5}>
           <Copyright />
         </Box>
-      </Container>
     </Container>
   );
 };

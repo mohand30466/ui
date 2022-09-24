@@ -4,8 +4,6 @@
     align-items: center;
     justify-content: space-around;
     min-height: 100vh;
-    width: 95vw;
-    margin-left: 1.9vw;
     background-color: var(--primary);
 }
 .left{

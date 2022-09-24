@@ -5,12 +5,23 @@
 }
 
 .visicalCard{
-
     display: flex;
-    flex-direction: row;
-    width: 50vw;
+    width: 40vw;
     height: 5vh;
     justify-content: space-between;
     border: 1px solid var(--buttom);
-    margin:2px;
+    background-color: var(--buttom);
+    margin: 1rem;
+    align-items: center;
+    border-radius: 2px;
+}
+.cardDetail{
+
+    display: flex;
+    width: 100vw;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
 }

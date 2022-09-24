@@ -22,12 +22,12 @@ function Copyright() {
 const Main = () => {
   return (
     
-      <Container>
+      <>
       <Hero />
       <Box mt={5}>
         <Copyright />
       </Box>
-    </Container>
+    </>
     
   );
 };
