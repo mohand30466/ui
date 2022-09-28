@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     background: "#a8dadc",
-    maxWidth: "96.2%",
+    maxWidth: "100%",
   },
   form: {
     width: "100%", // Fix IE 11 issue.
@@ -57,6 +57,7 @@ const useStyles = makeStyles((theme) => ({
   },
   director:{
     minHeight: "63.5vh",
+    Width: "100vw",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -66,6 +67,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Mybussiness = () => {
+  const [bussinessData, setBussinessData] = useState([]);
   const [name, setName] = useState("");
   const [bussinessId, setBussinessId] = useState("");
   const [email, setEmail] = useState("");
@@ -78,6 +80,16 @@ const Mybussiness = () => {
   const db = JSON.parse(localStorage.getItem("data"));
   const user = db.user_id;
   const navigate = useNavigate()
+
+
+ useEffect(()=>{
+  const getData = Api.GetBussiness().then((res) => {
+    setBussinessData(res);
+  });
+const mydata = bussinessData.filter(dta=>dta.user==user)
+if (mydata)navigate("/bussinessdetail") 
+  
+ },[])
 
 
   console.log(user);
@@ -113,15 +125,7 @@ const Mybussiness = () => {
           onClick={(e) => setActive(!active)}
           className="createicon"
         />
-        <div> 
-        <span>Already have BussinesS </span>
-        <FontAwesomeIcon
-          icon={faArrowRight}
-          onClick={(e) => navigate("/bussinessdetail")}
-          className="createicon"
-        />
-
-        </div>
+        
       </div>
       { active? 
       <Container component="main" maxWidth="xs">
@@ -248,18 +252,29 @@ const Mybussiness = () => {
         </div>
       
       </Container>:
-      <div  className={classes.director}>
+        <div  className={classes.director}>
+        <h3>ALL IN ONE</h3>
         <h3>Bussiness management</h3>
         <ol>
         <li>Create your bussiness</li>
-        <li>Greate your staff</li>
-        <li>create and update your shift</li>
-        <li>update the employee card</li>
-        <li>Data Analitics</li>
+        <li>Create Shifts</li>
+        <li>Create Staff</li>
+        <li>Update Staff on the Shifts </li>
+        <li>Add daily hours report</li>
+        <li>Add Daily employee report</li>
+        <li>Accounting</li>
+        <li>Make paysleeve for the employee</li>
+        <li>My wallet</li>
+        <li>Analize Data</li>
+        <li>Project management</li>
+        <li>Mission management</li>
         </ol>
        
       </div>
+       
+      
       }
+     
        <Box mt={5}>
           <Copyright />
         </Box>

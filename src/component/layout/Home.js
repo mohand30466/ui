@@ -82,6 +82,11 @@ export default function Home() {
             <Link to="/shift">Shift</Link>
           </div>
 
+          <div className="nestedlink">Cards</div>
+          <div className="nestedlink">Accounting</div>
+          <div className="nestedlink">My Wallet</div>
+          <div className="nestedlink">Project management</div>
+          <div className="nestedlink">Daily mission management</div>
           <div className="nestedlink">Settings</div>
           <div className="nestedlink">sign out</div>
         </div>

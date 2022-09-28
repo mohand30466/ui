@@ -2,7 +2,6 @@ import React from "react";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
 import { useState, useEffect } from "react";
 import { Api } from "../service/Api";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -89,7 +88,7 @@ export default function BussinessDetail() {
         <div className="bussinessinformations">
           {data &&
             data.map((item) => {
-              if (item.user == id && item.bussinessId == 505151) {
+              if (item.user == id && item.bussinessId == 3333) {
                 console.log(item);
                 return (
                   <>
