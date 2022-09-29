@@ -73,7 +73,7 @@ export default function Home() {
       <div className="userpro">
         <div className="usersettings">
           <div className="nestedlink">
-            <Link to="/bussiness">My Bussiness</Link>
+            <Link to="/bussiness"> <h4>  My Bussiness</h4></Link>
           </div>
           <div className="nestedlink">
             <Link to="/staff">My Staff</Link>
@@ -81,12 +81,18 @@ export default function Home() {
           <div className="nestedlink">
             <Link to="/shift">Shift</Link>
           </div>
-
           <div className="nestedlink">Cards</div>
-          <div className="nestedlink">Accounting</div>
-          <div className="nestedlink">My Wallet</div>
-          <div className="nestedlink">Project management</div>
-          <div className="nestedlink">Daily mission management</div>
+
+          <div className="nestedlink">
+            <Link to="/accounting">Accounting</Link>
+          </div>
+          <div className="nestedlink">
+            <Link to="/mywallet">My Wallet</Link>
+          </div>
+          <div className="nestedlink">
+            <Link to="/Projectmanagement">Project management</Link>
+          </div>
+
           <div className="nestedlink">Settings</div>
           <div className="nestedlink">sign out</div>
         </div>
