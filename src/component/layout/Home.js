@@ -90,6 +90,9 @@ export default function Home() {
             <Link to="/mywallet">My Wallet</Link>
           </div>
           <div className="nestedlink">
+            <Link to="/shoping">Shoping</Link>
+          </div>
+          <div className="nestedlink">
             <Link to="/Projectmanagement">Project management</Link>
           </div>
 

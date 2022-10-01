@@ -18,6 +18,7 @@ export default function Mywallet() {
     <div>
         My Wallet coming soom!
     </div>
+    <h1>here you can make get your money and you can transfer money and own your card to wizdeow money or buy online from this page</h1>
     
     </>
   );

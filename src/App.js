@@ -29,6 +29,7 @@ import UpdateBussiness from "./component/bussiness/UpdateBussines";
 import Wallet from "./component/bussiness/Wallet/MyWallet"
 import Accounting from "./component/bussiness/Accounting/Accounting"
 import Projectmanagement from "./component/bussiness/ProjectManagment/Projectmanagement";
+import Shoping from "./component/bussiness/shoping/Shoping";
 
 function App() {
   let user = "user";
@@ -66,6 +67,7 @@ function App() {
             <Route path="/mywallet" element={<Wallet/>} />
             <Route path="/accounting" element={<Accounting />} />
             <Route path="/projectmanagement" element={<Projectmanagement />} />
+            <Route path="/shoping" element={<Shoping />} />
           </Routes>
         </AuthProvider>
       </BrowserRouter>
