@@ -64,14 +64,11 @@ const Staff = () => {
   const [job, setJob] = useState("");
   const [staffId, SetStaffId] = useState("");
 
-  console.log(Udata);
-
+ 
   const GStaffClick = async (e) => {
     e.preventDefault();
     const sendMessage = await Api.GStaff({ bussiness, name, staffId, job })
       .then((res) => {
-        localStorage.setItem("staff",JSON.stringify(res));
-        console.log(res);
         if (res.id) {
           alert(`Congratulations! you add new Staff`);
         } else {
@@ -84,7 +81,7 @@ const Staff = () => {
   useEffect(() => {
     const GetStaffData = Api.GetStaff()
       .then((res) => {
-        localStorage.setItem("Allstaff");
+        localStorage.setItem("Allstaff",JSON.stringify(res));
         console.log(res);
       })
       .catch((err) => console.log(err));
