@@ -173,7 +173,7 @@ export default function Home() {
                       <div>
                         <span
                           className="likeClick"
-                          onClick={(e) => sendApplications(item.id+1)}
+                          onClick={(e) => sendApplications(item.id)}
                         >
                           <span>{item.my_poke.length}</span>
                           <Likes db={faHeart} className="fontAwsome" />
