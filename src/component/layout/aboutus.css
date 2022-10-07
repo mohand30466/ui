@@ -12,8 +12,16 @@
     height: 100vh;
 
 }
+.title{
+    font-size: 30px;
+    text-align: center;
 
-.topaboutus p {
+}
+.h1{
+    font-size: 30px;
+    text-align: center;
+}
+.subtittle {
 
     text-align: center;
 }
@@ -180,4 +188,91 @@
     height: 20px;
     background-color: var(--buttom);
     margin-right: 10px;
+}
+
+
+
+@media only screen and (max-width: 800px) {
+
+    .topaboutus{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: var(--primarytext);
+        height: 70vh;
+    
+    }
+    
+
+.partner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    text-align: center;
+    background: var(--secondery);
+    color: var(--seconderyText);
+}
+.hideme{
+    display: none;
+}
+.middlepage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--primaryText);
+    width:100vw;
+    height: 100vh;
+    justify-content: space-between;
+  
+}
+.listofThings{
+ display: flex;   
+}
+.rightside {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--seconderyText);
+}
+ ol {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+}
+h1{
+    text-align: center;
+}
+
+
+.leftside{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:100vw;
+    height: 100vh;
+    background-color: aquamarine;
+}
+.imageteam {
+    background-color: var(--background);
+    min-height: 100vh;
+
+}
+
+
+
+
+
+
 }

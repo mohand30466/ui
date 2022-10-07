@@ -22,11 +22,8 @@
    
 }
 
-.links_container{
-    display: flex;
-    width: 50%;
 
-}
+
 .links{
     display: flex;
     width: 100%;
@@ -49,21 +46,12 @@
     cursor: pointer;
     /* background-color: green; */
 }
-/* .links li ::after{
-    content: " ";
-    display: inline-block;
-    width: 100%;
-    height: 3px;
-    margin-bottom: 10px;
-    background: green;
-    cursor: pointer;
-} */
 
 
 .rightsideheader{
     width: 15vw;
     display: flex;
-    background: #000;
+    background: var(--primary);
     justify-content: center;
     align-items: center;
     border-radius: 2px;
@@ -108,3 +96,126 @@
 .logout a {
     text-decoration: none;
 }
+
+
+.links_container {
+    display: flex;
+    width: 70vw;
+  }
+
+  .icon {
+    display: none;
+    width: 70px;
+    height: 2px;
+    border-radius: 2px;
+    background: wheat;
+    margin-top: 32px;
+    transition: all 0.5s;
+  }
+
+  @media only screen and (max-width: 800px) {
+ 
+      .icon {
+        display: inline-block;
+        position: absolute;
+        top: 0px;
+        right: 15px;
+        width: 70px;
+        height: 5px;
+        border-radius: 0px;
+        background: var(--seconderyText);
+        transition: all 0.5s;
+        z-index: 1;
+      }
+      .icon:before {
+        content: "";
+        position: absolute;
+        width: 70px;
+        height: 2px;
+        border-radius: 5px;
+        background: var(--seconderyText);
+        top: -17px;
+      }
+      .icon:after {
+        content: "";
+        position: absolute;
+        width: 70px;
+        height: 2px;
+        border-radius: 5px;
+        background: var(--seconderyText);
+        top: 17px;
+      }
+      .links {
+        display: flex;
+        flex-direction: column;
+        width:10rem;
+        height: 100vh;
+        background: var(--primary);
+        transform: translatex(0);
+      }
+      .links_container{
+        display: none;
+      }
+ 
+      .home{
+        margin-top: 30px;
+      }
+      .burgerContainer{
+        position: absolute;
+        right: 1rem;
+        top: 0%;
+        width: 9.5rem;
+        height: 4rem;
+      }
+      .logo{
+        width: 8rem;
+        height: 4rem;
+        background-image: url('./images/Yashirlogo.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size:60%;
+        cursor: pointer;
+        margin-left: -8px;
+       
+    }
+    .links li a {
+        text-decoration: none;
+        color: var(--seconderyText);
+        z-index: 1;
+    
+    }
+    .rightsideheader{
+        display: flex;
+        width: 10rem;
+        background: var(--primary);
+        justify-content: center;
+        align-items: center;
+        border-radius: 2px;
+    }
+   
+  
+  }
+ 
+  
+ 
+  
+/*   
+  .action {
+    display: visible;
+    background: transparent;
+    transition: all 0.5s;
+  }
+  
+  .action.icon:after {
+    transition: all 0.5s;
+    transform: rotate(135deg);
+    top: 53px;
+  }
+  .action.icon:before {
+    transition: all 0.5s;
+    transform: rotate(-135deg);
+  }
+  .mymenu {
+    transform: translatex(0);
+    transition: all 0.5s;
+  }  */

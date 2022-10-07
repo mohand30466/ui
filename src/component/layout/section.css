@@ -1,13 +1,15 @@
 .section_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 89vh;
-    /* background: rgb(213, 217, 241);
-    background-image: url(https://media.istockphoto.com/photos/modern-mid-century-and-vintage-interior-of-living-room-blue-lounge-picture-id924701294?s=612x612); */
     background-color: var(--background);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-position-y:-300px ;
+ 
 
+}
+.h2{
+    font-size: 1.5rem;
 }
 p{
     color:var(--primary);
@@ -44,11 +46,67 @@ p{
 }
 .msg{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    height: 50%;
-    width: 20%;
+    height: 15vh;
+    width: 20vw;
     border-radius: 100px;
-    background: var(--secondery)
+    background: var(--secondery);
+    margin:5px;
+
+
+}
+
+
+@media only screen and (max-width: 800px) {
+    .h2{
+        font-size: 14px;
+        text-align: center;
+    }
+
+    p{
+        font-size: 11px;
+        color:var(--primary);
+        text-align: center;
+    }
+    .join{
+        height: 3rem;
+        width: 15rem;
+        font-size: 1rem;
+        background:var(--buttom);
+        border: 1px solid var(--buttom);
+        border-radius: 5px;
+        cursor: pointer;
+        color: var(--seconderyText);
+        font-family:Arial, Helvetica, sans-serif;
+    }
+
+    .user_story{
+        height: 29vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        justify-content: space-around;
+        align-items: center;
+        color:var(--seconderyText);
+        font-family:Arial, Helvetica, sans-serif;
+    
+    }
+    .msg{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 10vh;
+        width: 25vw;
+        border-radius: 100px;
+        background: var(--secondery);
+        font-size: 10px;
+        text-align: center;
+    
+    }
+
+
+
 
 }

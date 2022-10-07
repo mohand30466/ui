@@ -42,19 +42,19 @@ const Aboutus = () => {
       <div className="topaboutus">
         <div className="topcontent">
           <p className="title"> About us</p>
-          <h1>we are here to make life easier for you</h1>
-          <h1>we are here to make life easier for you</h1>
-          <p> herei can write anything meaning full and i can attract the people by that sentenses</p>
+          <div className="h1">we are here to make life easier for you</div>
+          <div className="h1">All in one</div>
+          <p className="subtittle"> herei can write anything meaning full and i can attract the people by that sentenses</p>
 
         </div>
         <div className="partners">
 
           <div className="partner">Shilla</div>
-          <div className="partner">Sivov Hashney</div>
-          <div className="partner">Riverside</div>
+          <div className="partner hideme">Sivov Hashney</div>
+          <div className="partner hideme">Riverside</div>
           <div className="partner">Rami Levi</div>
           <div className="partner">Shipolet</div>
-          <div className="partner">Dupnove8</div>
+          <div className="partner hideme">Dupnove8</div>
 
 
         </div>
@@ -71,14 +71,12 @@ const Aboutus = () => {
           <p> orivide good quality manpower in short time</p>
           <p> orivide good quality manpower in short time</p>
           <p> orivide good quality manpower in short time</p>
-          <ol>
+          <ol className="listofThings">
             <li>part one</li>
             <li>part one</li>
             <li>part one</li>
             <li>part one</li>
-            <li>part one</li>
-            <li>part one</li>
-            <li>part one</li>
+          
           </ol>
 
         </div>

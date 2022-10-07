@@ -1,5 +1,5 @@
 import "./header.css";
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router";
 import image from "./images/Yashirlogo.png";
@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
   links: {
     margin: 20,
-    background: "#e63946"
+    background: "#e63946",
   },
   hide: {
     display: "none",
@@ -89,201 +89,95 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const Header = () => {
+  const [active, setActive] = useState(false);
   const rememberMe = JSON.parse(localStorage.getItem("data"));
   const navigate = useNavigate();
   const url = "http://127.0.0.1:8000";
   const classes = useStyles();
- 
 
   return (
-    <> 
-    <div className="header_container">
-      <div className="header">
-        <div className="logo" onClick={(e) => navigate("/")}></div>
-        <div className="links_container">
-          <ul className="links">
-            {rememberMe ? (
-              <li>
-                <Link to="/home">Home </Link>
+    <>
+      <div className="header_container">
+        <div className="header">
+          <div className="logo" onClick={(e) => {navigate("/")
+          setActive(false)}}></div>
+          <div onClick={(e) => setActive(!active)} className="burgerContainer">
+            <span className="icon"></span>
+          </div>
+
+          <div className={active ? "link-containerActive" : "links_container"}>
+            <ul className="links">
+              {rememberMe ? (
+                <li className="home" onClick={(e) => setActive(false)}>
+                  <Link to="/home">Home </Link>
+                </li>
+              ) : null}
+              <li onClick={(e) => setActive(false)}>
+                <Link to="/about">About us</Link>
               </li>
-            ) : null}
-            <li>
-              <Link to="/about">About us</Link>
-            </li>
-            <li>
-              <Link to="contact">Contact</Link>
-            </li>
-            <li>
-              <Link to="/Pricing">Pricing</Link>
-            </li>
-            <li>
-              <Link to="/Plog">Plog</Link>
-            </li>
-            <li>
-              <Link to="/Agreements">Agreements</Link>
-            </li>
-          </ul>
+              <li onClick={(e) => setActive(false)}>
+                <Link to="/contact">Contact</Link>
+              </li>
+              <li onClick={(e) => setActive(false)}>
+                <Link to="/Pricing">Pricing</Link>
+              </li>
+              <li onClick={(e) => setActive(false)}>
+                <Link to="/Plog">Plog</Link>
+              </li>
+              <li onClick={(e) => setActive(false)}>
+                <Link to="/Agreements">Agreements</Link>
+              </li>
+            </ul>
+
+            {rememberMe ? (
+              <div className="rightsideheader" onClick={(e) => setActive(false)}>
+                {" "}
+                <button
+                  className="logout"
+                  onClick={(e) => {
+                    localStorage.removeItem("data");
+                    navigate("./");
+                  }}
+                >
+                  SignOut
+                </button>
+                <Link to="/account" onClick={(e) => setActive(false)}>
+                  {rememberMe.user ? (
+                    <img
+                      className="account"
+                      src={url + rememberMe.user.profile.image}
+                      alt={rememberMe.id}
+                    />
+                  ) : (
+                    <img className="account" src={image} alt="1" />
+                  )}
+                </Link>
+              </div>
+            ) : (
+              <div className="auth" onClick={(e) => setActive(false)}>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  className={classes.links}
+                  onClick={(e) => {navigate("/signin")
+                  setActive(false)}}
+                >
+                  signIn
+                </Button>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  className={classes.links}
+                  onClick={(e) => {navigate("/signup")
+                setActive(false)}}
+                >
+                  Register
+                </Button>
+              </div>
+            )}
+          </div>
         </div>
-        {rememberMe ? (
-          <div className="rightsideheader">
-            {" "}
-            <button
-              className="logout"
-              onClick={(e) => {
-                localStorage.removeItem("data");
-                navigate("./");
-              }}
-            >
-              SignOut
-            </button>
-            <Link to="/account">
-              {rememberMe.user ? (
-                <img
-                  className="account"
-                  src={url + rememberMe.user.profile.image}
-                  alt={rememberMe.id}
-                />
-              ) : (
-                <img className="account" src={image} alt="1" />
-              )}
-            </Link>
-          </div>
-        ) : (
-          <div className="auth">
-             <Button
-            variant="contained"
-            color="secondary"
-            className={classes.links}
-            onClick={(e) => navigate("/signin")}
-          >
-            signIn
-          </Button>
-          <Button
-            variant="contained"
-            color="secondary"
-            className={classes.links}
-            onClick={(e) => navigate("/signup")}
-          >
-            Register
-          </Button>
-            
-          </div>
-        )}
       </div>
-    </div>
     </>
   );
 };
-
-
-export function PersistentDrawerRight() {
-  const navigate = useNavigate();
-
-  const classes = useStyles();
-  const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
-
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
-
-  return (
-    
-    <div className={classes.root}>
- 
-      <CssBaseline />
-      <AppBar
-        position="fixed"
-        className={clsx(classes.appBar, {
-          [classes.appBarShift]: open,
-        })}
-      >
-        <Toolbar>
-          <Typography variant="h6" noWrap className={classes.title}>
-            Direct Manpower
-          </Typography>
-          <Typography noWrap className={classes.links}>
-            home
-          </Typography>
-          <Typography noWrap className={classes.links}>
-            contact us
-          </Typography>
-          <Typography noWrap className={classes.links}>
-            about us
-          </Typography>
-          <Button
-            variant="contained"
-            color="secondary"
-            className={classes.links}
-            onClick={(e) => navigate("/signin")}
-          >
-            signIn
-          </Button>
-
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="end"
-            onClick={handleDrawerOpen}
-            className={clsx(open && classes.hide)}
-          >
-            <MenuIcon />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
-      <main
-        className={clsx(classes.content, {
-          [classes.contentShift]: open,
-        })}
-      >
-        {/* <div className={classes.drawerHeader} /> */}
-      </main>
-      <Drawer
-        className={classes.drawer}
-        variant="persistent"
-        anchor="right"
-        open={open}
-        classes={{
-          paper: classes.drawerPaper,
-        }}
-      >
-        <div className={classes.drawerHeader}>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === "rtl" ? (
-              <ChevronLeftIcon />
-            ) : (
-              <ChevronRightIcon />
-            )}
-          </IconButton>
-        </div>
-        <Divider />
-        <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-      </Drawer>
-      
-    </div>
-  );
-}

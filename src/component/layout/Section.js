@@ -5,7 +5,7 @@ const Section = () => {
     return ( 
         <div className="section_container">
             <div className="section">
-                <h2>HELLO AND WELCOME TO DIRECT MANPOWER COMPANY</h2>
+                <div className="h2">HELLO AND WELCOME TO DIRECT MANPOWER COMPANY</div>
                 <p>The best site ever provide service 24/7 with full of suport</p>
                 <p>We are almost in the all cities in isreal, you will find us around you </p>
                 <p>Click here</p>
