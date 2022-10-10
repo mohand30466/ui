@@ -48,17 +48,16 @@
     color: var(--seconderyText);
 }
 
-.middlepage{
+.middlepagee{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--primaryText);
-    /* margin-left: 23px; */
+    background: var(--secondery);
     width:100%;
     height: 100vh;
-    justify-content: space-between;
   
 }
+
 .rightside{
     width:48%;
     height: 100vh;

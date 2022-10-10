@@ -39,7 +39,7 @@
     width: 100%;
     height: 95vh;
     background-color: var(--seconderyText);
-    box-shadow: 10px 5px 20px var(--primary);
+    box-shadow: 10px 5px 20px rgb(50, 85, 96);
  }
  .mainpost img{
     float: left;
@@ -84,6 +84,15 @@
     width: 100%;
     
  }
+ .epost {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20px;
+    box-shadow: 1px 10px 10px rgb(53, 81, 91);
+    align-items: center;
+   }
+
  .posthotel{
     width: 160px;
     height: 170px;
@@ -101,10 +110,10 @@
     border-bottom: 2px solid var(--buttom);
  }
 .earlierpost{
-    
-     min-height: 100vh;
+   min-height: 100vh;
     width: 96%;
     margin-left: 15px;
+    flex-wrap: wrap;
 
 }
 .earlierpost img{
@@ -139,3 +148,47 @@
    height: 60vh;
 
   }
+  /* .inputTitle{
+   width: 60vw;
+
+
+  } */
+  input {
+   width: 71vw;
+   height: 6vh;
+   border: 2px solid green;
+   border-radius: 5px;
+   margin-top: 5px;
+}
+.textArea {
+    width: 86vw;
+    min-height: 60vh;
+}
+  @media only screen and (max-width: 800px) {
+   .plogtitle {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 10vh;
+      background-color: var(--background);}
+   .plogtitle p{
+     color: #1d3557;
+     font-size: 1rem;
+   }
+   .latestplog {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      min-height: 100vh;
+      flex-wrap: wrap;
+  }
+   
+
+
+
+
+  }
+  
+

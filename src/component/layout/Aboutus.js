@@ -64,7 +64,7 @@ const Aboutus = () => {
         </div>
 
       </div>
-      <div className="middlepage">
+      <div className="middlepagee">
         <div className="rightside">
           <h1>Our Goal in This Projecta</h1>
           <p> orivide good quality manpower in short time</p>

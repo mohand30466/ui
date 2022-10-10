@@ -132,5 +132,55 @@
 
     }
 
+    @media only screen and (max-width: 800px) {
+
+      .homeContainer{
+     
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: var(--secondery);
+        align-self: center;
+        flex-wrap: wrap;
+      
+      }
+      .userpro{
+        display: none;
+      }
+      .postcontainer{
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+        border-radius: 2px;
+        background-color: var(--secondery);
+      }
+
+
+
+      .post{
+        display: flex;
+        flex-direction: column;
+        width: 90vw;
+        height: 65vh;
+        justify-content: center;
+        align-items: center;
+        color: var(--seconderyText);
+        border-radius:5px;
+        box-shadow: 2px 2px 10px rgb(43, 83, 96);
+        background-color: var(--primary);
+  
+      }
+      .post img{
+        width: 100%;
+      }
+      .users{
+        display: none;
+      }
+    }
+
 
 

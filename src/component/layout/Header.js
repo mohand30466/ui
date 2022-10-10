@@ -127,6 +127,20 @@ export const Header = () => {
               <li onClick={(e) => setActive(false)}>
                 <Link to="/Agreements">Agreements</Link>
               </li>
+              {active&&(
+                <>
+          
+                 <li onClick={(e) => setActive(false)}>
+                 <Link to="/bussiness">My Bussiness</Link>
+               </li>
+                <li onClick={(e) => setActive(false)}>
+                <Link to="/user">Users</Link>
+              </li>
+              </>
+
+              )
+
+              }
             </ul>
 
             {rememberMe ? (

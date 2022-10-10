@@ -1,5 +1,28 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
 .agreementscatogeries{
     height: 45vh;
+}
+.agreementTitle{
+    text-align: center;
+    font-size: 2rem;
+}
+.catogories{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 50vh;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background: var(--secondery);
 }
 .proffisional{
     width: 150px;
@@ -9,22 +32,18 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     box-shadow:10px 10px 10px var(--secondery);
 }
-.cookagreement{
-    width: 150px;
-    height: 150px;
-    background: var(--primary);
-    color: var(--seconderyText);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    box-shadow:10px 10px 10px var(--secondery);
-}
-.agreement{
+
+.middlepage{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    padding: 30px;
     text-align: right;
     min-height: 350vh;
-    color: var(--seconderyText);
+    width: 100vw;
+    background: var(--secondery);
+    flex-wrap: wrap;
+    margin-right: 5px;
+
 }
 .buttom{
     background-color: var(--buttom);
@@ -34,4 +53,54 @@
     margin-top: 20px;
     color: var(--seconderyText);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+@media only screen and (max-width: 800px) {
+
+    .middlepage{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        text-align: right;
+        min-height: 700vh;
+        width: 100vw;
+        background: var(--secondery);
+        flex-wrap: wrap;
+        margin: 5px;
+    }
+    .proffisional{
+        width: 100px;
+        height: 100px;
+        background: var(--seconderyText);
+        color: var(--primery);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        box-shadow:10px 10px 10px var(--secondery);
+    }
+    .catogories{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 31vh;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        background: var(--secondery);
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .middlepage{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        text-align: right;
+        min-height: 1000vh;
+        width: 100vw;
+        background: var(--secondery);
+        flex-wrap: wrap;
+        margin: 5px;
+
+    }
+
+
 }
