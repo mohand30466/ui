@@ -66,7 +66,7 @@ const Aboutus = () => {
       </div>
       <div className="middlepagee">
         <div className="rightside">
-          <h1>Our Goal in This Projecta</h1>
+          <h1 className="goal">Our Goal in This Projecta</h1>
           <p> orivide good quality manpower in short time</p>
           <p> orivide good quality manpower in short time</p>
           <p> orivide good quality manpower in short time</p>
@@ -133,11 +133,37 @@ const Aboutus = () => {
               <div>
                 <img src="https://static.remove.bg/remove-bg-web/5c20d2ecc9ddb1b6c85540a333ec65e2c616dbbd/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg"/>
                 <h5>Adam Bshar</h5>
-                <p>Co-founder</p>
+                <p className="position">Co-founder&GM</p>
               </div>
-              <div className="hoby">
-                <p>Love swimming and riding :)</p>
+              
+              <div className="icons">
+                   <FontAwesomeIcon icon={faCoffee} />
+                   <FontAwesomeIcon icon={faCoffee} />
               </div>
+            </div>
+          </div>
+          <div className="card">
+            <div className="teamavatar">
+              <div>
+                <img src="https://static.remove.bg/remove-bg-web/5c20d2ecc9ddb1b6c85540a333ec65e2c616dbbd/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg"/>
+                <h5>Alhaji Fofana</h5>
+                <p className="position">Co-founder & HR</p>
+              </div>
+           
+              <div className="icons">
+                   <FontAwesomeIcon icon={faCoffee} />
+                   <FontAwesomeIcon icon={faCoffee} />
+              </div>
+            </div>
+          </div>
+          <div className="card">
+            <div className="teamavatar">
+              <div>
+                <img src="https://static.remove.bg/remove-bg-web/5c20d2ecc9ddb1b6c85540a333ec65e2c616dbbd/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg"/>
+                <h5>Mohand Abdo</h5>
+                <p className="position">Co-founder& PR</p>
+              </div>
+             
               <div className="icons">
                    <FontAwesomeIcon icon={faCoffee} />
                    <FontAwesomeIcon icon={faCoffee} />
@@ -149,11 +175,9 @@ const Aboutus = () => {
               <div>
                 <img src="https://static.remove.bg/remove-bg-web/5c20d2ecc9ddb1b6c85540a333ec65e2c616dbbd/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg"/>
                 <h5>Adam Bshar</h5>
-                <p>Co-founder</p>
+                <p className="position">Co-founder</p>
               </div>
-              <div className="hoby">
-                <p>Love swimming and riding :)</p>
-              </div>
+             
               <div className="icons">
                    <FontAwesomeIcon icon={faCoffee} />
                    <FontAwesomeIcon icon={faCoffee} />
@@ -165,43 +189,9 @@ const Aboutus = () => {
               <div>
                 <img src="https://static.remove.bg/remove-bg-web/5c20d2ecc9ddb1b6c85540a333ec65e2c616dbbd/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg"/>
                 <h5>Adam Bshar</h5>
-                <p>Co-founder</p>
+                <p className="position">Co-founder</p>
               </div>
-              <div className="hoby">
-                <p>Love swimming and riding :)</p>
-              </div>
-              <div className="icons">
-                   <FontAwesomeIcon icon={faCoffee} />
-                   <FontAwesomeIcon icon={faCoffee} />
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            <div className="teamavatar">
-              <div>
-                <img src="https://static.remove.bg/remove-bg-web/5c20d2ecc9ddb1b6c85540a333ec65e2c616dbbd/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg"/>
-                <h5>Adam Bshar</h5>
-                <p>Co-founder</p>
-              </div>
-              <div className="hoby">
-                <p>Love swimming and riding :)</p>
-              </div>
-              <div className="icons">
-                   <FontAwesomeIcon icon={faCoffee} />
-                   <FontAwesomeIcon icon={faCoffee} />
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            <div className="teamavatar">
-              <div>
-                <img src="https://static.remove.bg/remove-bg-web/5c20d2ecc9ddb1b6c85540a333ec65e2c616dbbd/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg"/>
-                <h5>Adam Bshar</h5>
-                <p>Co-founder</p>
-              </div>
-              <div className="hoby">
-                <p>Love swimming and riding :)</p>
-              </div>
+           
               <div className="icons">
                    <FontAwesomeIcon icon={faCoffee} />
                    <FontAwesomeIcon icon={faCoffee} />

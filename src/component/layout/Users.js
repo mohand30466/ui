@@ -15,20 +15,21 @@ const Users = () => {
       minheight: "100vh",
       display: "flex",
       justifyItem: "spaceBetween",
-      border: "1px solid blue",
-      borderRadius: "5px",
+      borderRadius: "3px",
       margin: "10px",
-      background: "#f1faee",
+      background: "#fcbf49",
       marginTop: "1rem",
+      boxShadow: "2px 2px 10px #c3c5c9",
     },
     usercontainer0: {
-      marginTop: "4.2rem",
+      marginTop: "3.7rem",
     },
     tittle: {
       display: "flex",
       justifyContent: "space-around",
       alignItems: "center",
       marginTop: "1rem",
+      
     },
     avatar: {
       width: "70px",
@@ -44,6 +45,7 @@ const Users = () => {
     title: {
       margin: "4px",
       lineheight: "10px",
+      // textTransform: 'uppercase',
     },
     nav: {
       textDecoration: "none",

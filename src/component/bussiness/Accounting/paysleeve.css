@@ -1,0 +1,72 @@
+.paysleevecpntainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 98.7vw;
+    min-height: 50vh;
+    background: var(--primary);
+}
+.paysleevetype{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 97vw;
+    align-items: center;
+}
+
+.pstitle{
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--seconderyText);
+    height: 20vh;
+
+}
+.paysleevecreator{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 97vw;
+    align-items: center;
+    height: 8vh;
+    background: var(--seconderyText);
+    color: var(--primary);
+
+}
+.hoursfee{
+    width: 10vw;
+}
+.psbtn{
+    width: 10vw;
+    background: rgb(20, 82, 20);
+    color: var(--seconderyText);
+}
+.pslist{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 98.7vw;
+    align-items: center;
+    min-height: 40vh;
+    background: var(--primary);
+    color: var(--seconderyText);
+
+}
+.pslisttitle{
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--seconderyText);
+    background: var(--primary);
+
+
+
+}
+.visicalps{
+    display: flex;
+    justify-content: space-between;
+    width: 50vw;
+    align-items: center;
+    border-bottom:  2px solid blue;
+
+  
+}

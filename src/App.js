@@ -30,6 +30,10 @@ import Wallet from "./component/bussiness/Wallet/MyWallet"
 import Accounting from "./component/bussiness/Accounting/Accounting"
 import Projectmanagement from "./component/bussiness/ProjectManagment/Projectmanagement";
 import Shoping from "./component/bussiness/shoping/Shoping";
+import Income from "./component/bussiness/Accounting/Income";
+import Paysleeve from "./component/bussiness/Accounting/Paysleeve";
+import Expensess from "./component/bussiness/Accounting/Expensess";
+import Invoicess from "./component/bussiness/Accounting/Invoicess";
 
 function App() {
   let user = "user";
@@ -68,6 +72,10 @@ function App() {
             <Route path="/accounting" element={<Accounting />} />
             <Route path="/projectmanagement" element={<Projectmanagement />} />
             <Route path="/shoping" element={<Shoping />} />
+            <Route path="/income" element={<Income/>} />
+            <Route path="/paysleeve" element={<Paysleeve />} />
+            <Route path="/expensess" element={<Expensess />} />
+            <Route path="/invoicess" element={<Invoicess />} />
           </Routes>
         </AuthProvider>
       </BrowserRouter>

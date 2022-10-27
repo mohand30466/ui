@@ -2,7 +2,6 @@ import React from "react";
 import Hero from "./Hero";
 import { Link } from "react-router-dom";
 import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 
 

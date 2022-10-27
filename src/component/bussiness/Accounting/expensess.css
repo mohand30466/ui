@@ -1,0 +1,24 @@
+.excontainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    min-height: 100vh;
+    width: 100vw;
+    background: var(--primary);
+    color: var(--seconderyText);
+
+}
+.ex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 50vh;
+    width: 50vw;
+    background-image: url(https://media.istockphoto.com/photos/personal-expenses-concept-financial-analysis-background-picture-id903735920?k=6&m=903735920&s=170667a&w=0&h=5yqDg16C_CMxWpP2YmqQQhxi0akWsz6ockI8BTHfUUc=);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 3px;
+    margin-top: 2rem;
+}

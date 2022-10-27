@@ -81,7 +81,6 @@ export default function Home() {
           <div className="nestedlink">
             <Link to="/shift">Shift</Link>
           </div>
-          <div className="nestedlink">Cards</div>
 
           <div className="nestedlink">
             <Link to="/accounting">Accounting</Link>
@@ -97,7 +96,7 @@ export default function Home() {
           </div>
 
           <div className="nestedlink">Settings</div>
-          <div className="nestedlink">sign out</div>
+          <div className="nestedlink">Sign out</div>
         </div>
       </div>:null
       }
@@ -146,7 +145,7 @@ export default function Home() {
           ) : null}
         </div>
 
-        <div className="posts">
+        <div className="posts"> 
           <h1 className="posttitle"> Bost lists</h1>
 
           {data &&
@@ -158,25 +157,24 @@ export default function Home() {
                       key={item.id}
                       onClick={(e) => navigate("/postdetail", { state: item })}
                     >
-                      <h1 style={{ textAlign: "center" }}>{item.post}</h1>
-                      <p>{item.title}</p>
-                      <p>{item.dis}</p>
+                      <p style={{ textAlign: "center",color:"green",fontSize:'25px' }}>{item.title}</p>
+                      <p style={{ textAlign: "center",color:"blue" }}>{item.dis}</p>
                       <img className="stylee" src={item.image} alt="" />
                     </div>
                     <div className="rate" key={item.id}>
                       <div className="likeClick">
                         <span onClick={(e) => sendlikeclicked(item.id)}>
-                          <span>{item.my_like.length}</span>
-                          <Likes db={faThumbsUp} className="fontAwsome" />
+                          <span >{item.my_like.length}</span>
+                          <Likes style={{ color:"yellow" }} db={faThumbsUp} className="fontAwsome" />
                         </span>
                       </div>
-                      <div>
+                      <div  className="likeClick">
                         <span
-                          className="likeClick"
+                         
                           onClick={(e) => sendApplications(item.id)}
                         >
-                          <span>{item.my_poke.length}</span>
-                          <Likes db={faHeart} className="fontAwsome" />
+                          <span   className="likeClick">{item.my_poke.length}</span>
+                          <Likes style={{ color:"yellow" }} db={faHeart} className="fontAwsome" />
                         </span>
                       </div>
                     </div>

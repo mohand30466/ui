@@ -1,6 +1,6 @@
 .content{
     height: 100vh;
-    background-color: var(--background);
+    background-color: var(--seconderyText);
     color:var(--primaryText);
 }
 .topaboutus{
@@ -27,7 +27,7 @@
 }
 
 .partners{
-    margin-top: 7rem;
+    margin: 3rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -44,13 +44,14 @@
     width: 100px;
     border-radius: 50%;
     text-align: center;
-    background: var(--secondery);
+    background-color: green;
     color: var(--seconderyText);
+    margin:5px;
 }
 
 .middlepagee{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background: var(--secondery);
     width:100%;
@@ -59,8 +60,8 @@
 }
 
 .rightside{
-    width:48%;
-    height: 100vh;
+    width:48vw;
+    height: 90vh;
     /* background-color: antiquewhite; */
     display: flex;
     flex-direction: column;
@@ -69,7 +70,7 @@
 
 }
 .rightside p{
-    color: var(--seconderyText);
+    color: rgb(9, 245, 9);
     letter-spacing: 1px;
     line-height: 12px;
 
@@ -79,8 +80,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width:48%;
-    height: 100vh;
+    width:48vw;
+    height: 90vh;
     background-color: aquamarine;
 }
 
@@ -115,16 +116,19 @@
 }
 
 .info h1{
-   color: var(--background);
+   color: var(--userbackground);
 }
 .info p{
-  color: var(--secondery);
+  color:  aquamarine;
+}
+.goal{
+   color: var(--userbackground);
 }
 
 .buttompage{
     color: var(--primarytext);
     height: 100vh;
-    background-color: var(--background);
+    background-color: var(--seconderyText);
 
 }
 .topteam{
@@ -137,20 +141,22 @@
     justify-items: center;
     flex-wrap: wrap;
     justify-content: space-around;
+    min-height: 70vh;
+    width: 100vw;
 
 }
 .card{
     position: relative;
     width: 270px;
-    height: 210px;
+    height: 152px;
     background-color: var(--secondery);
-    border-radius: 5px;
-    margin-top: 5px;
-    box-shadow:  10px 10px lightblue;
+    border-radius: 3px;
+    margin: 5px;
+    box-shadow:  2px 2px 7px var(--boxShadow);
+    border: 1px solid var(--secondery);
 }
 .teamavatar{
     height: 70%;
-    border-bottom: 1px solid red;
 }
 .teamavatar img{
     margin: 15px;
@@ -158,12 +164,7 @@
     width: 70px;
     border-radius: 2px;
 }
-.teamavatar h5{
-    line-height: 10px;
-    margin-left: 15px;
-    color: var(--seconderyText);
 
-}
 .teamavatar p{
     line-height: 20px;
     margin-left: 15px;
@@ -189,6 +190,24 @@
     margin-right: 10px;
 }
 
+.teamavatar h5{
+    
+    line-height: 10px;
+    margin-left: 15px;
+    color: var(--seconderyText);
+}
+.recordName{
+    font-size: 2rem;
+    border-bottom: 1px solid red;
+
+}
+.icons{
+    color: yellow;
+}
+.position{
+    color: var(--userbackground);
+}
+
 
 
 @media only screen and (max-width: 800px) {
@@ -199,7 +218,7 @@
         justify-content: center;
         align-items: center;
         color: var(--primarytext);
-        height: 70vh;
+        height: 81vh;
     
     }
     
@@ -264,9 +283,21 @@ h1{
     background-color: aquamarine;
 }
 .imageteam {
-    background-color: var(--background);
+    background-color: var(--seconderyText);
     min-height: 100vh;
 
+}
+.card{
+    position: relative;
+    width: 270px;
+    height: 140px;
+    background-color: var(--secondery);
+    border-radius: 2px;
+    margin: 5px;
+    box-shadow:  2px 2px 7px var(--boxShadow);
+}
+.hoby{
+    display: none;
 }
 
 

@@ -95,3 +95,26 @@ input{
     color: var(--seconderyText);
     border-bottom: 2px solid var(--secondery);
 }
+
+@media only screen and (max-width: 800px) {
+    .accountcontainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-around;
+        min-height: 100vh;
+        background-color: var(--primary);
+    }
+    .left{  
+      padding-top: 10px;
+      display: flex;
+      flex-direction: column;
+      height: 50vh;
+      width: 48vw;
+      background-color: var(--secondery);
+    }
+
+
+
+}

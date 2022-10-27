@@ -1,13 +1,19 @@
 .containerDetails{
     width: 100vw;
     height: 100vh;
-    background-color: var(--secondery);
+    background-color: var(--primery);
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 0;
     padding: 0%;
     box-sizing: border-box;
+    color: var(--seconderyText);
+
+}
+p{
+    color: var(--seconderyText);
+
 }
 .arrowBack{
     margin: 10px;
@@ -15,12 +21,13 @@
 
 }
 .contents{
-    width: 97vw;
+    width: 100vw;
     height: 80vh;
-    background-color: var(--secondery);
+    background-color:#1d3557;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    color: var(--seconderyText);
     
 }
 .mypostAvatar{
@@ -28,6 +35,8 @@
     height: 60vh;
     background: var(--seconderyText);
     border-radius: 5px;
+    color: var(--seconderyText);
+
 }
 .mypostAvatar img{
     width: 40vw;
@@ -41,9 +50,14 @@
 }
 .discriptions{
     color: var(--seconderyText);
+    
 }
 .title{
     font-size: 2rem;
+    color: yellow;
+    text-align: start;
+
+
 }
 .titles{
     font-size: 1.5rem;

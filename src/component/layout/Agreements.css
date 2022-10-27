@@ -36,11 +36,11 @@
 .middlepage{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
     text-align: right;
-    min-height: 350vh;
-    width: 100vw;
-    background: var(--secondery);
+    width: 97vw;
+    background: var(--seconderyText);
     flex-wrap: wrap;
     margin-right: 5px;
 
@@ -60,13 +60,14 @@
     .middlepage{
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: center;
+        align-items: center;
         text-align: right;
-        min-height: 700vh;
-        width: 100vw;
-        background: var(--secondery);
+        min-height: 620vh;
+        width: 97vw;
+        background: var(--seconderyText);
         flex-wrap: wrap;
-        margin: 5px;
+        
     }
     .proffisional{
         width: 100px;
@@ -95,7 +96,7 @@
         justify-content: space-evenly;
         text-align: right;
         min-height: 1000vh;
-        width: 100vw;
+        width: 97vw;
         background: var(--secondery);
         flex-wrap: wrap;
         margin: 5px;

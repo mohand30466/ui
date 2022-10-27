@@ -1,0 +1,33 @@
+.account-con{
+    width: 100rem;
+    height: 100rem;
+    background: green;
+    color: red;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.back-icon{
+  margin: 1rem;
+  color: blue;
+}
+.content-links{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100vw;
+    height: 62.2vh;
+    background: var(--primary);
+    color: var(--seconderyText);
+}
+.nav{
+    display: flex;
+    width: 30vw;
+    height: 40%;
+    background: var(--buttom);
+    text-align: center;
+    justify-content: center;
+    border-radius: 3px;
+
+}

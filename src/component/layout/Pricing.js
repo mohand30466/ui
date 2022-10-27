@@ -10,7 +10,6 @@ import "./pricing.css";
 import { useNavigate } from "react-router-dom";
 
 function Copyright() {
-
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
@@ -36,10 +35,10 @@ const useStyles = makeStyles((theme) => ({
 const Pricing = () => {
   const navigate = useNavigate();
   return (
-    <div className="content">
+    <div className="content1">
       <div className="pricing-topcontainer">
         <div className="topcontent">
-          <p className="title">Services And Pricing</p>
+          <p className="title-price">Services And Pricing</p>
           <div className="pricing-title">
             here you can find all kitchen servicess and pricing
           </div>
@@ -54,15 +53,12 @@ const Pricing = () => {
           </p>
         </div>
 
-        <div className="catogories">
+        <div className="catogories1">
           <Link to="/Agreements">
             <div className="pricing pricing2 cheif">
               Cheif
               <br />
               <h4>90$</h4>
-              <button className="btn" onClick={(e) => navigate("/Agreements")}>
-                See The Agreements
-              </button>
             </div>
           </Link>
 
@@ -72,9 +68,6 @@ const Pricing = () => {
               Cooker
               <br />
               <h4>90$</h4>
-              <button className="btn" onClick={(e) => navigate("/Agreements")}>
-                See The Agreements
-              </button>
             </div>
           </Link>
           <Link to="/Agreements">
@@ -82,9 +75,6 @@ const Pricing = () => {
               Preprations
               <br />
               <h4>80$</h4>
-              <button className="btn" onClick={(e) => navigate("/Agreements")}>
-                See The Agreements
-              </button>
             </div>
           </Link>
           <Link to="/Agreements">
@@ -92,9 +82,6 @@ const Pricing = () => {
               Mensar
               <br />
               <h4>80$</h4>
-              <button className="btn" onClick={(e) => navigate("/Agreements")}>
-                See The Agreements
-              </button>
             </div>
           </Link>
           <Link to="/Agreements">
@@ -102,9 +89,6 @@ const Pricing = () => {
               Stewar
               <br />
               <h4>70$</h4>
-              <button className="btn" onClick={(e) => navigate("/Agreements")}>
-                See The Agreements
-              </button>
             </div>
           </Link>
           <Link to="/Agreements">
@@ -112,20 +96,16 @@ const Pricing = () => {
               Cleaner
               <br />
               <h4>70$</h4>
-              <button className="btn" onClick={(e) => navigate("/Agreements")}>
-                See The Agreements
-              </button>
             </div>
           </Link>
         </div>
-
       </div>
 
       <div className="buttompage employeelist">
         <div className="superEmployeeTitle">
           <div className="getWotkTitle">People who get Work</div>
-          <p>Any Single Cent They Deserv It</p>
-          <p>Honestly Is The Best In Out Worker </p>
+          <p className="getWorkP">Any Single Cent They Deserv It</p>
+          <p className="getWorkP">Honestly Is The Best In Out Worker </p>
         </div>
         <div className="imageteam">
           <div className="employeecard">
@@ -219,11 +199,10 @@ const Pricing = () => {
             </div>
           </div>
         </div>
-        <Box mt={0}>
+      </div>
+      <Box mt={0}>
         <Copyright />
       </Box>
-      </div>
-     
     </div>
   );
 };

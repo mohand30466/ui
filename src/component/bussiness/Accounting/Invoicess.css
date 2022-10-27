@@ -1,0 +1,93 @@
+.invoiceContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    min-height: 80vh;
+    align-items: center;   
+}
+.businformations{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 20vh;
+    align-items: center;   
+    justify-content: space-between;
+    border-bottom: 1px red solid;
+
+}
+.bslogo{
+    width: 11rem;
+    height: 80%;
+    background-image: url("https://play-lh.googleusercontent.com/ahJtMe0vfOlAu1XJVQ6rcaGrQBgtrEZQefHy7SXB7jpijKhu1Kkox90XDuH8RmcBOXNn");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: 1rem;
+    border-radius: 1px;
+
+}
+.bsdetail{
+    text-align: left;
+    font-size: 14px;
+    line-height: 1rem;
+}
+.bsdetail p{
+    font-size: 12px;
+    color: blue;
+}
+.clientinforations{
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    height: 8vh;
+    align-items: center;   
+    justify-content: space-between;
+    font-size: 14px;
+    line-height: 1rem;
+    margin: 10px;
+    
+
+
+}
+.invdetail{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: 20vh;
+    align-items: center;   
+    justify-content: space-between;
+    margin: 10px;
+
+    /* background: gray; */
+    
+
+}
+.invdetails{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    border: 1px rgb(38, 27, 105) solid;    
+    
+
+}
+.inInput{
+    width: 25vh;
+}
+.inInputs{
+    width: 35vh;
+}
+.finalAmount{
+    width: 76vw;
+    text-align: center;
+}
+.bankdetail{
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    align-items: center;   
+    justify-content: space-between;
+    margin: 10px;
+    background: lightblue;
+
+}
