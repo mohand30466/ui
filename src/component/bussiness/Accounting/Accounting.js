@@ -15,10 +15,10 @@ export default function Accounting() {
         />
       </div>
       <div>
-        <div style={{ textAlign: "center", fontSize: "2rem" }}>
+        <div style={{ textAlign: "center", fontSize: "2rem" , background:"#1d3557" , color:"#f1faee"}}>
           Accounting Manage your Work
         </div>
-        <div style={{ textAlign: "center", fontSize: "2rem" }}>
+        <div style={{ textAlign: "center", fontSize: "2rem",background:"#1d3557",color:"#f1faee" }}>
           here you can make accounting for all the worker you have
         </div>
         <div className="content-links">

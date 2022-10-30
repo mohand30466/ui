@@ -26,13 +26,22 @@ export default function Paysleeve() {
             onClick={(e) => navigate("/accounting")}
           />
         </div>
-        <div>
+        <div style={{width:"9rem"}}>
           Date: {date.getDate()}/{date.getMonth()}/{date.getFullYear()}{" "}
         </div>
       </div>
       <div className="paysleevecpntainer">
         <div className="paysleeveTitle">
           <div className="pstitle">Create Paysleeve</div>
+          <div className="employeelist">
+            <div>Names</div>
+            <div>Names</div>
+            <div>Names</div>
+            <div>Names</div>
+            <div>Names</div>
+ 
+            
+            </div>
 
           <div className="paysleevecreator">
             <div>Name:</div>

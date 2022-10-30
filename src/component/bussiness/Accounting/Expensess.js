@@ -16,12 +16,12 @@ export default function Expensess() {
             onClick={(e) => navigate("/accounting")}
           />
         </div>
-        <div>
+        <div  style={{width:"9rem"}}>
           Date: {date.getDate()}/{date.getMonth()}/{date.getFullYear()}{" "}
         </div>
       </div>
       <div>
-        <div style={{ textAlign: "center", fontSize: "2rem" }}>Expencess</div>
+        <div style={{ textAlign: "center", fontSize: "2rem",background:"#1d3557" , color:"#f1faee" }}>Expencess</div>
         <div className="excontainer">
           <div className="ex "> 
 

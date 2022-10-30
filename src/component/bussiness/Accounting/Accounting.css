@@ -6,10 +6,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background: var(--primary);
+    color: var(--seconderyText);
 }
 .back-icon{
-  margin: 1rem;
+  /* margin: 1rem; */
   color: blue;
+  background: var(--primary);
+  color: var(--seconderyText);
+  padding: 2rem;
+
+
 }
 .content-links{
     display: flex;

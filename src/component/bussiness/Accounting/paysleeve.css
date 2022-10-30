@@ -1,4 +1,7 @@
 .paysleevecpntainer{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -7,12 +10,23 @@
     min-height: 50vh;
     background: var(--primary);
 }
+.employeelist{
+    width: 98.7vw;
+    min-height: 30vh;
+    background: var(--primary);
+    color: var(--seconderyText);
+
+
+
+}
 .paysleevetype{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 97vw;
+    width: 98.7vw;
     align-items: center;
+    background:#1d3557;
+    color:#f1faee;
 }
 
 .pstitle{

@@ -17,7 +17,7 @@ export default function Income() {
           onClick={(e) => navigate("/accounting")}
         />
       </div>
-      <div style={{ textAlign: "center", fontSize: "2rem" }}>Greate Invoicess!</div>
+      <div style={{ textAlign: "center", fontSize: "2rem",background:"#1d3557" , color:"#f1faee" }}>Greate Invoicess!</div>
       <div className="invoicesscontainer">
         <div className="invoicsType">
           <div className="invoiceTypeBtn">
