@@ -1,0 +1,42 @@
+.cont{
+    min-height: 89vh;
+    width: 100vw;
+    color: var(--seconderyText);
+    background: var(--primary);
+}
+.arrow_icon{
+    background: var(--primary);
+    color: var(--seconderyText);
+    padding: 2rem;
+}
+.programcontainer{
+    width: 98.7vw;
+    min-height: 25vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--seconderyText);
+    background: var(--primary);
+}
+.actionCreator{
+    display: flex;
+    min-height: 25vh;
+    width: 95%;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+.actionCreator input{
+    width: 33vw;
+}
+.actionList{
+    display: flex;
+    min-height: 10vh;
+    width:95%;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid rebeccapurple;
+    background: rebeccapurple;
+
+}
