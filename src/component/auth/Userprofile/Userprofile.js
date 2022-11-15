@@ -9,10 +9,12 @@ const UserProfile = () => {
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
   const [profisional, setProfisional] = useState("");
-  const rememberMe = JSON.parse(localStorage.getItem('data'))
+  const rememberMe = JSON.parse(localStorage.getItem("data"))
   const navigate = useNavigate()
   const userid = rememberMe.id
-  console.log(rememberMe);
+  console.log(rememberMe.name);
+  console.log(userid);
+  
 
 
   const UserProfileClick = async (e) => {
@@ -40,7 +42,7 @@ const UserProfile = () => {
   return (
     <div>
       <h1>
-        welcome set up your profile {rememberMe.username}
+        welcome set up your profile {rememberMe.username} {rememberMe.id}
       </h1>
       <form onSubmit={UserProfileClick}>
         <label>Phone</label>

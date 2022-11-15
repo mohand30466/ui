@@ -40,9 +40,9 @@ export class Api {
     }).then((res) => res.json());
   }
 
-  static UpdateUserProfile(id,data) {
-    return fetch(`https://mohanproject.herokuapp.com/api/profile/${id}/`, {
-      method: "PUT",
+  static UpdateUserProfile(data) {
+    return fetch(`https://mohanproject.herokuapp.com/api/profile/`, {
+      method: "POST",
       body: data,
     }).then((res) => res.json())
       .catch((err) => console.log(err));
@@ -243,6 +243,31 @@ export class Api {
     return fetch(`https://mohanproject.herokuapp.com/api/plogPost/`)
       .then((res) => res.json())
       .catch((err) => console.log(err));
+  }
+  static ProjectManager(body) {
+    return fetch(`http://mohanproject.herokuapp.com/api/todolist/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    }).then((res) => res.json());
+  }
+  static GetProjectManager() {
+    return fetch(`http://mohanproject.herokuapp.com/api/todolist/`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((res) => res.json());
+  }
+  static Paysleeve(body) {
+    return fetch(`http://mohanproject.herokuapp.com/api/paysleeve/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    }).then((res) => res.json());
   }
   
 

@@ -23,7 +23,7 @@ export default function Accounting() {
         </div>
         <div className="content-links">
           <div className="nav" onClick={(e) => navigate("/income")}>
-            <div style={{fontSize:"1.5rem"}}>Income</div>
+            <div style={{fontSize:"1.5rem"}}>Income&Invoices</div>
             <p>here you can do all the invoicess and anything related to the incomes</p>
           </div>
           <div className="nav" onClick={(e) => navigate("/paysleeve")}>

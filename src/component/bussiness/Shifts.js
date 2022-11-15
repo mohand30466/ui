@@ -1,19 +1,22 @@
 import React from "react";
-import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Api } from "../service/Api";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import "./Shift.css";
+import { useLocation } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBackward
+} from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 function Copyright() {
   return (
@@ -56,19 +59,23 @@ const useStyles = makeStyles((theme) => ({
 
 const Shift = () => {
   const Bdata = JSON.parse(localStorage.getItem("bussinesData"));
-  const bussiness = Bdata.id;
+
   const [staff, SetStaffId] = useState("");
   const [shifts, setShifts] = useState("");
-  const [staffData, setStaffData] = useState("");
   const classes = useStyles();
+  const {state} = useLocation();
+  const data = state.staff
+  const businessdata = state.busnessinfo
+  const bussines = state.busnessinfo.id
+  console.log(bussines);
+  const navigate = useNavigate()
+ 
 
-  useEffect(() => {
-    const staffData = Api.GetStaff().then((res) => setStaffData(res));
-  }, []);
+
 
   const GShiftClick = async (e) => {
     e.preventDefault();
-    const sendMessage = await Api.GShift({ bussiness, staff, shifts })
+    const sendMessage = await Api.GShift({ bussines, staff, shifts })
       .then((res) => {
         console.log(res);
         if (res.id) {
@@ -77,11 +84,10 @@ const Shift = () => {
       })
       .catch((err) => console.log(err));
   };
-  console.log(staffData);
-  console.log(staff);
-  console.log(shifts);
+
   return (
     <Container className={classes.container}>
+      <FontAwesomeIcon icon={faBackward} onClick={e=>navigate("/bussinessdetail",{state:businessdata})}/>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
@@ -92,13 +98,14 @@ const Shift = () => {
             Choose Staff
           </Typography>
 
-          {staffData &&
-            staffData.map((item) => {
+          {data &&
+            data.map((item) => {
+              if(item.bussines== state.busnessid){
               return (
                 <div className="stafflist" onClick={(e) => SetStaffId(item.id)}>
-                  {(item.bussines = bussiness || item.bussines == null ? item.name : null)}
+                  {item.name},,,{item.job}
                 </div>
-              );
+              )};
             })}
 
           <form className={classes.form} noValidate onSubmit={GShiftClick}>

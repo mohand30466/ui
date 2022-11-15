@@ -7,6 +7,10 @@
     border-radius: 2px;
     background: var(--secondery);
     cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
 
 }
 .checkboxcontainer{

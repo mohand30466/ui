@@ -85,9 +85,14 @@ const Mybussiness = () => {
     const getData = Api.GetBussiness().then((res) => {
       setBussinessData(res);
     });
-    const mydata = bussinessData.filter((dta) => dta.user == user);
-    if (mydata) navigate("/bussinessdetail");
   }, []);
+
+  const mydata = bussinessData.map((dta) =>{
+    const user = db.user_id;
+    if (dta.user == user) navigate("/bussinessdetail",{ state: dta });
+  }
+   );
+    
 
   console.log(user);
   const RegesterClick = async (e) => {
@@ -113,6 +118,8 @@ const Mybussiness = () => {
       })
       .catch((err) => console.log(err));
   };
+
+  
   return (
     <Container className={classes.container}>
       <div>

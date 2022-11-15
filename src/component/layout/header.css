@@ -8,6 +8,10 @@
     justify-content: space-between;
     height: 100%;
 }
+.links_container {
+  display: flex;
+  width: 60vw;
+}
 
 
 .logo{
@@ -98,10 +102,7 @@
 }
 
 
-.links_container {
-    display: flex;
-    width: 70vw;
-  }
+
 
   .icon {
     display: none;

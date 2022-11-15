@@ -2,7 +2,6 @@ import React from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
@@ -13,8 +12,9 @@ import { Api } from "../service/Api";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import "./Card.css";
-import { SecurityUpdate } from "@mui/icons-material";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBackward } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -63,11 +63,11 @@ const Cards = () => {
   const [staffData, setStaffData] = useState("");
   const [staffCard, setStaffCard] = useState([]);
   const [update, setUpdate] = useState(false);
-
   const classes = useStyles();
   const { state } = useLocation();
   const staff = state.staff;
   const shifts = state.shifts;
+  const navigate = useNavigate();
 
   useEffect(() => {
     const staffData = Api.GetSingleStaff(state.id).then((res) =>
@@ -98,6 +98,11 @@ const Cards = () => {
 
   return (
     <Container className={classes.container}>
+      <FontAwesomeIcon
+        icon={faBackward}
+        onClick={(e) => navigate("/bussiness")}
+      />
+
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
@@ -149,8 +154,6 @@ const Cards = () => {
             </Button>
           </form>
         </div>
-
-        
       </Container>
       <div className="cardDetail">
         <h1>Card Detail</h1>
@@ -170,8 +173,8 @@ const Cards = () => {
         </div>
       </div>
       <Box mt={5}>
-          <Copyright />
-        </Box>
+        <Copyright />
+      </Box>
     </Container>
   );
 };

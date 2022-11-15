@@ -11,8 +11,10 @@ import Container from "@material-ui/core/Container";
 import { useState, useEffect } from "react";
 import { Api } from "../service/Api";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
-
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faBackward} from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 function Copyright() {
   return (
@@ -59,11 +61,12 @@ const Staff = () => {
   const Bdata = JSON.parse(localStorage.getItem("bussinesData"));
   const Udata = JSON.parse(localStorage.getItem("data"));
   const user = Udata.user_id;
-  const bussiness = Bdata.id;
   const [name, setName] = useState("");
+  const bussiness = Bdata.id;
   const [job, setJob] = useState("");
   const [staffId, SetStaffId] = useState("");
-
+  const navigate = useNavigate()
+  const {state}= useLocation()
  
   const GStaffClick = async (e) => {
     e.preventDefault();
@@ -89,6 +92,8 @@ const Staff = () => {
 
   return (
     <div className={classes.container}>
+      <FontAwesomeIcon icon={faBackward} onClick={e=>navigate("/bussinessdetail",{state:state})}/>
+
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>

@@ -56,6 +56,7 @@ const Users = () => {
     const userdata = Api.Getusers()
       .then((res) => {
        localStorage.setItem("udata", JSON.stringify(res))
+       console.log(res);
       }
 
       )

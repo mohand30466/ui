@@ -17,7 +17,16 @@ export default function Income() {
           onClick={(e) => navigate("/accounting")}
         />
       </div>
-      <div style={{ textAlign: "center", fontSize: "2rem",background:"#1d3557" , color:"#f1faee" }}>Greate Invoicess!</div>
+      <div
+        style={{
+          textAlign: "center",
+          fontSize: "2rem",
+          background: "#1d3557",
+          color: "#f1faee",
+        }}
+      >
+        Greate Invoicess!
+      </div>
       <div className="invoicesscontainer">
         <div className="invoicsType">
           <div className="invoiceTypeBtn">
@@ -44,13 +53,19 @@ export default function Income() {
             placeholder="about invoice"
           />
           <input className="bsnsinput" type="text" placeholder="Money Amount" />
-          <input className="bsnsinput" type="checkbox" placeholder="Tax" />
+          <div>
+            <span>Add Tax</span>
+
+            <input className="bsnsinput" type="checkbox" placeholder="Tax" />
+          </div>
         </div>
         <div className="submitinvoice">
-          <p >payment time</p>
+          <p>payment time</p>
 
           <input className="bsnsinput" type="date" placeholder="payment Time" />
-          <button onClick={e=>navigate('/invoicess')}>Greate Invoice</button>
+          <button onClick={(e) => navigate("/invoicess")}>
+            Greate Invoice
+          </button>
         </div>
       </div>
     </div>

@@ -1,14 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faSquarePlus } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router";
 import "./Projectmanagement.css";
+import { Api } from "../../service/Api";
 
 export default function Projectmanagement() {
+  const db = JSON.parse(localStorage.getItem("data"));
+  const user = db.user_id;
   const navigate = useNavigate();
-  const [actions, setActions] = useState(false);
+  const [action, setActions] = useState(false);
+
+  const [actions, setAction] = useState("");
+  const [time, setTimes] = useState("");
+  const [isfinish, setIsFinish] = useState(false);
+  const [data, setData] = useState([]);
   console.log(actions);
 
+  const creatAction = () => {
+    const newdata = Api.ProjectManager({ user, actions, time, isfinish })
+      .then((res)=> res.JSON())
+      .catch((err) => console.log(err.message));
+  };
+
+  useEffect(() => {
+    return () => {
+      const dta = Api.GetProjectManager()
+        .then((res) => setData(res))
+        .catch((err) => console.log(err));
+      console.log(data);
+    };
+  }, [data]);
   return (
     <div className="cont">
       <div className="arrow_icon">
@@ -25,9 +47,9 @@ export default function Projectmanagement() {
         {" "}
         <button
           style={{ background: "green", color: "white", textAlign: "center" }}
-          onClick={(e) => setActions(!actions)}
+          onClick={(e) => setActions(!action)}
         >
-          {!actions ? (
+          {!action ? (
             <>
               Create Action
               <FontAwesomeIcon
@@ -41,11 +63,15 @@ export default function Projectmanagement() {
         </button>
       </div>
       <div className="programcontainer">
-        {actions ? (
+        {action ? (
           <div className="actionCreator">
-            <input type={"text"} placeholder="record your actions" />
-            <input type={"datetime-local"} />
-            <button>Create actions</button>
+            <input
+              type={"text"}
+              placeholder="record your actions"
+              onChange={(e) => setAction(e.target.value)}
+            />
+            <input type={"time"} onChange={(e) => setTimes(e.target.value)} />
+            <button onClick={(e) => creatAction(e)}>Create actions</button>
           </div>
         ) : (
           <div className="actionList">
@@ -56,8 +82,12 @@ export default function Projectmanagement() {
             <input
               type={"checkbox"}
               style={{ width: "4vw", background: "green" }}
+              onChange={(e) => setIsFinish(!isfinish)}
             />
-            <button style={{ width: "10vw", background: "green" }} onClick={(e) => setActions(!actions)}>
+            <button
+              style={{ width: "10vw", background: "green" }}
+              onClick={(e) => setActions(!action)}
+            >
               update
             </button>
             <button style={{ width: "10vw" }}>Delete</button>
