@@ -11,8 +11,9 @@
 .h2{
     font-size: 1.5rem;
 }
-p{
-    color:var(--primary);
+.section p{
+    color:#1d3557;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .section{
     height: 70%;

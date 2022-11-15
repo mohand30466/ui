@@ -108,9 +108,14 @@ export const Header = () => {
           <div className={active ? "link-containerActive" : "links_container"}>
             <ul className="links">
               {rememberMe ? (
+                <> 
                 <li className="home" onClick={(e) => setActive(false)}>
                   <Link to="/home">Home </Link>
                 </li>
+                <li onClick={(e) => setActive(false)}>
+                <Link to="/Plog">Plog</Link>
+              </li>
+              </>
               ) : null}
               <li onClick={(e) => setActive(false)}>
                 <Link to="/about">About us</Link>
@@ -121,9 +126,7 @@ export const Header = () => {
               <li onClick={(e) => setActive(false)}>
                 <Link to="/Pricing">Pricing</Link>
               </li>
-              <li onClick={(e) => setActive(false)}>
-                <Link to="/Plog">Plog</Link>
-              </li>
+              
               <li onClick={(e) => setActive(false)}>
                 <Link to="/Agreements">Agreements</Link>
               </li>

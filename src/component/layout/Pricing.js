@@ -38,14 +38,14 @@ const Pricing = () => {
     <div className="content1">
       <div className="pricing-topcontainer">
         <div className="topcontent">
-          <p className="title-price">Services And Pricing</p>
-          <div className="pricing-title">
+          <p  style={{fontSize:"2rem",color:"yellow", textAlign:"center" }}>Services And Pricing</p>
+          <div className="h1" style={{color:"#1d3557" }}>
             here you can find all kitchen servicess and pricing
           </div>
-          <div className="pricing-title">
+          <div className="h1" style={{color:"#1d3557" }}>
             The best price and proffisional and fastest servicess
           </div>
-          <p className="pricing-prograph">
+          <p className="h1" style={{color:"#1d3557" }}>
             {" "}
             We are morethan happy to have you in our client list!
             <br />

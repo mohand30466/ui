@@ -32,7 +32,8 @@ const UserProfile = () => {
       .then((res) => {
         if(res.id)
            console.log(res)
-           navigate("/home")
+           localStorage.removeItem("data");
+           navigate("/signin")
 
         }  )
     

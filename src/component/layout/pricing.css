@@ -24,8 +24,8 @@
 
 .title-price{
     font-size: 2rem;
-    font-weight: 400;
-    color: var(--userbackground);
+    /* font-weight: 400; */
+    color: greenyellow;
     text-align: center;
 }
 .pricing-topcontainer{

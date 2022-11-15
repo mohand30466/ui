@@ -47,10 +47,10 @@ const Agreements = () => {
     <div className="content">
       <div className="topaboutus">
         <div className="topcontent">
-          <p className="title"> Agreements</p>
-          <div className="agreementTitle">We make the agreements easier and clear for you</div>
-          <p>We Are Here For You!</p>
-          <p> Please Read It Carfuly And Be Sure To Understand Everything</p>
+          <p className="title" style={{textAlign:"center"}}> Agreements</p>
+          <div className="h1">We make the agreements easier and clear for you</div>
+          <p className="h1">We Are Here For You!</p>
+          <p className="h1"> Please Read It Carfuly And Be Sure To Understand Everything</p>
         </div>
         <div className="catogories agreementscatogeries">
           <div

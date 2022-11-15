@@ -30,6 +30,12 @@ export default function Home() {
   const db = JSON.parse(localStorage.getItem("data"));
   const id = db.user_id;
 
+
+const getout = ()=>{
+  localStorage.removeItem("data")
+  navigate("/")
+}
+
   const openPostWindow = () => setOpen(!open);
 
   const postSubmit =  async (e) => {
@@ -75,13 +81,7 @@ export default function Home() {
           <div className="nestedlink">
             <Link to="/bussiness"> <h4>  My Bussiness</h4></Link>
           </div>
-          <div className="nestedlink">
-            <Link to="/staff">My Staff</Link>
-          </div>
-          <div className="nestedlink">
-            <Link to="/shift">Shift</Link>
-          </div>
-
+      
           <div className="nestedlink">
             <Link to="/accounting">Accounting</Link>
           </div>
@@ -96,7 +96,7 @@ export default function Home() {
           </div>
 
           <div className="nestedlink">Settings</div>
-          <div className="nestedlink">Sign out</div>
+          <div className="nestedlink" onClick={e=>getout()}>Sign out</div>
         </div>
       </div>:null
       }

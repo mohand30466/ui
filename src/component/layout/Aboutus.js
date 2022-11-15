@@ -41,7 +41,7 @@ const Aboutus = () => {
     <div className="content">
       <div className="topaboutus">
         <div className="topcontent">
-          <p className="title"> About us</p>
+          <p className="title" style={{textAlign:"center"}}> About us</p>
           <div className="h1">we are here to make life easier for you</div>
           <div className="h1">All in one</div>
           <p className="subtittle"> herei can write anything meaning full and i can attract the people by that sentenses</p>
